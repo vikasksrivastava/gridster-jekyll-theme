@@ -1,7 +1,6 @@
 full_rebuild: true
 name: Gridster
 description: the material experience for jekyll
-destination: jekyllbuild
 url: #place url
 baseurl: /gridster-jekyll-theme #place folder name if site is served in subfolder
 permalink: /:title/

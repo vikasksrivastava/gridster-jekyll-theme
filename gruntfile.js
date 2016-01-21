@@ -127,7 +127,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: ['css/**'],
-                        dest: 'jekyllbuild/'
+                        dest: '_site/'
                     },
                 ]
             },
@@ -136,7 +136,7 @@ module.exports = function (grunt) {
                     {
                         expand: true,
                         src: ['js/**'],
-                        dest: 'jekyllbuild/'
+                        dest: '_site/'
                     },
                 ]
             }
@@ -153,8 +153,8 @@ module.exports = function (grunt) {
                 livereload: true
             },
             site: {
-                files: ["{,*/}{,*/}{,*/}*.html", "{,*/}{,*/}{,*/}*.md", "{,*/}*.yml", "!jekyllbuild/{,*/}{,*/}*.*", "!node_modules/{,*/}*.*"],
-                tasks: ["shell:jekyllBuild", "copy"]
+                files: ["{,*/}{,*/}{,*/}*.html", "{,*/}{,*/}{,*/}*.md", "{,*/}*.yml", "!_site/{,*/}{,*/}*.*", "!node_modules/{,*/}*.*"],
+                tasks: ["shell:_site", "copy"]
             },
             js: {
                 files: ['_js/{,*/}{,*/}*.js'],
@@ -166,16 +166,16 @@ module.exports = function (grunt) {
             },
             images: {
                 files: ["img/{,*/}{,*/}*.{png,jpg}"],
-                tasks: ["newer:imagemin", "responsive_images", "shell:jekyllBuild", "copy"]
+                tasks: ["newer:imagemin", "responsive_images", "shell:_site", "copy"]
             }
         },
 
         buildcontrol: {
             options: {
-                dir: 'jekyllbuild',
+                dir: '_site',
                 commit: true,
                 push: true,
-                message: 'Built jekyllbuild from commit %sourceCommit% on branch %sourceBranch%'
+                message: 'Built _site from commit %sourceCommit% on branch %sourceBranch%'
             },
             pages: {
                 options: {
@@ -189,7 +189,7 @@ module.exports = function (grunt) {
             jekyllServe: {
                 command: "jekyll serve  --no-watch"
             },
-            jekyllBuild: {
+            _site: {
                 command: "jekyll build"
             }
         }
@@ -199,7 +199,7 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.registerTask("serve", ["shell:jekyllServe"]);
-    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy", "open", "watch"]);
-    grunt.registerTask("build", ["imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:jekyllBuild", "copy"]);
+    grunt.registerTask("default", ["newer:imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:_site", "copy", "open", "watch"]);
+    grunt.registerTask("build", ["imagemin", "responsive_images", "uglify", "sass", "autoprefixer", "shell:_site", "copy"]);
     grunt.registerTask("deploy", ["buildcontrol:pages"]);
 };
