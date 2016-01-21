@@ -46,6 +46,16 @@ exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_
 sass:
     style: compressed
 
+compress_html:
+  clippings: all
+  comments: []
+  endings: []
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: [html, head, body]
+
 # prose.io configurations
 prose:
   media: "img"
