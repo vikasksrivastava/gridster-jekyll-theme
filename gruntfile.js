@@ -17,7 +17,7 @@ module.exports = function (grunt) {
                         cwd: '',
                         src: ['img/*.png', 'img/**/*.png', 'img/**/**/*.png'],
                         // Could also match cwd line above. i.e. project-directory/img/
-                        dest: 'media/compressed/',
+                        dest: 'media/',
                         flatten: true,
                         ext: '.png'
                     }
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
                         cwd: '',
                         src: ['img/*.jpg', 'img/**/*.jpg', 'img/**/**/*.jpg', 'img/*.jpeg', 'img/**/*.jpeg', 'img/**/**/*.jpeg'],
                         // Could also match cwd. i.e. project-directory/img/
-                        dest: 'media/compressed/',
+                        dest: 'media/',
                         flatten: true,
                         ext: '.jpg'
                     }
@@ -56,11 +56,11 @@ module.exports = function (grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        'media/compressed/*.{jpg,gif,png}',
-                        'media/compressed/!crops/*.{jpg,gif,png}',
+                        'media/*.{jpg,gif,png}',
+                        'media/!crops/*.{jpg,gif,png}',
                     ],
                     cwd: '',
-                    dest: 'media/compressed/crops/450x450/'
+                    dest: 'media/crops/450x450/'
                 }]
             },
             thumbs: {
@@ -75,11 +75,11 @@ module.exports = function (grunt) {
                     expand: true,
                     flatten: true,
                     src: [
-                        'media/compressed/*.{jpg,gif,png}',
-                        'media/compressed/!crops/*.{jpg,gif,png}',
+                        'media/*.{jpg,gif,png}',
+                        'media/!crops/*.{jpg,gif,png}',
                     ],
                     cwd: '',
-                    dest: 'media/compressed/crops/450x253/'
+                    dest: 'media/crops/450x253/'
                 }]
             }
         },

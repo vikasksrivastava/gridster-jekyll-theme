@@ -13,7 +13,7 @@ tag_dir: /tag
 category_dir: /category
 author_dir: /author
 author_title_prefix: 'Posted by '
-media_folder: /media/compressed
+media_folder: /media
 author_default_avatar: /profile-pic.jpg
 tumblr: "#"
 pinterest: "#"
