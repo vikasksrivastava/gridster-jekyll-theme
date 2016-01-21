@@ -86,12 +86,12 @@ module.exports = function (grunt) {
 
         uglify: {
             global: {
-                src: ['js/*.js', '!js/infinite/*.js'],
-                dest: 'js/build/global.min.js',
+                src: '_js/global/*.js',
+                dest: 'js/global.min.js',
             },
             infinite: {
-                src: 'js/infinite/*.js',
-                dest: 'js/build/infinite.min.js'
+                src: '_js/infinite/*.js',
+                dest: 'js/infinite.min.js'
             }
         },
 
@@ -135,7 +135,7 @@ module.exports = function (grunt) {
                 files: [
                     {
                         expand: true,
-                        src: ['js/build/**'],
+                        src: ['js/**'],
                         dest: 'jekyllbuild/'
                     },
                 ]
@@ -157,7 +157,7 @@ module.exports = function (grunt) {
                 tasks: ["shell:jekyllBuild", "copy"]
             },
             js: {
-                files: ['js/{,*/}{,*/}*.js'],
+                files: ['_js/{,*/}{,*/}*.js'],
                 tasks: ["uglify", "copy:js"]
             },
             css: {
