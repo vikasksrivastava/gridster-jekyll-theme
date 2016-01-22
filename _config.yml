@@ -3,6 +3,10 @@ name: Gridster
 description: the material experience for jekyll
 url: #place url
 baseurl: /gridster-jekyll-theme #place folder name if site is served in subfolder
+author: #For jekyll-feed
+  name: temp
+  email: temp@rary.com
+  uri: https://temp.github.com
 permalink: /:title/
 paginate: 8
 paginate_path: /page/:num/
@@ -27,7 +31,7 @@ youtube: "#"
 vimeo: "#"
 soundcloud: "#"
 email: "#"
-rss: feed.xml
+rss: feed.xml #For nav. The path is fixed by jekyll-feed; omitting this will result in no icon in nav.
 
 encoding: utf-8
 defaults:
@@ -48,9 +52,10 @@ relative_permalinks: false
 exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md, jekyllbuild, Gemfile, Gemfile.lock, preview, img, LICENCE]
 gems:
   - jekyll-sitemap
+  - jekyll-feed
 
 sass:
-    style: compressed
+  style: compressed
 
 compress_html:
   clippings: all
