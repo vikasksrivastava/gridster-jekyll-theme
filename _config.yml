@@ -9,9 +9,13 @@ paginate_path: /page/:num/
 infinite_scroll: true #change to false if you want to use pagination
 gems: [jekyll-paginate]
 tag_dir: /tag
+tags_dir: /tags #All tags summary page
 category_dir: /category
+categories_dir: /categories  #All categories summary page
 author_dir: /author
 author_title_prefix: 'Posted by '
+authors_dir: /about #ALl authors summary page, a.k.a. about
+changefreq: always
 media_folder: /media
 author_default_avatar: /profile-pic.jpg
 tumblr: "#"
@@ -42,6 +46,8 @@ kramdown:
   syntax_highlighter: rouge
 relative_permalinks: false
 exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md, jekyllbuild, Gemfile, Gemfile.lock, preview, img, LICENCE]
+gems:
+  - jekyll-sitemap
 
 sass:
     style: compressed

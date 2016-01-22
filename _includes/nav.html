@@ -12,7 +12,7 @@
                 </li>
                 <div id="drop-author" class="dropdown-content">
                   <li>
-                      <a href="{{ site.author_dir | prepend: site.baseurl | replace: '//', '/' }}">About</a>
+                      <a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}">About</a>
                   </li>
                   {% for siteauthor in site.data.authors %}
                     <li>
@@ -25,7 +25,7 @@
                 </li>
                 <div id="drop-category" class="dropdown-content">
                   <li>
-                      <a href="{{ site.category_dir | prepend: site.baseurl | replace: '//', '/' }}">All Categories</a>
+                      <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">All Categories</a>
                   </li>
                   {% for sitecategory in site.categories %}
                     {% assign categoryname = sitecategory[0] %}
@@ -39,7 +39,7 @@
                 </li>
                 <div id="drop-tag" class="dropdown-content">
                   <li>
-                      <a href="{{ site.tag_dir | prepend: site.baseurl | replace: '//', '/' }}">All Tags</a>
+                      <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">All Tags</a>
                   </li>
                   {% for sitetag in site.tags %}
                     {% assign tagname = sitetag[0] %}
