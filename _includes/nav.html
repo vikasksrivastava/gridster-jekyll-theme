@@ -5,10 +5,10 @@
             <a class="toggle-link noline"><i class="fa fa-close fa-lg fa-fw"></i></a>
             <ul>
                 <li>
-                    <a class="homelink" href="{{ site.baseurl | replace: '//', '/' }}/">Home</a>
+                    <a class="homelink" href="{{ site.baseurl | replace: '//', '/' }}/">Home<i class="fa fa-home fa-fw"></i></a>
                 </li>
                 <li>
-                    <a class="dropdown-button" href="#" data-activates='drop-author'>About&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                    <a class="dropdown-button" href="#" data-activates='drop-author'>About<i class="fa fa-caret-down fa-fw"></i></a>
                 </li>
                 <div id="drop-author" class="dropdown-content">
                   <li>
@@ -21,7 +21,7 @@
                   {% endfor %}
                 </div>
                 <li>
-                    <a class="dropdown-button" href="#" data-activates='drop-category'>Categories&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                    <a class="dropdown-button" href="#" data-activates='drop-category'>Categories<i class="fa fa-caret-down fa-fw"></i></a>
                 </li>
                 <div id="drop-category" class="dropdown-content">
                   <li>
@@ -36,7 +36,7 @@
                   {% endfor %}
                 </div>
                 <li>
-                    <a class="dropdown-button" href="#" data-activates='drop-tag'>Tags&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+                    <a class="dropdown-button" href="#" data-activates='drop-tag'>Tags<i class="fa fa-caret-down fa-fw"></i></a>
                 </li>
                 <div id="drop-tag" class="dropdown-content">
                   <li>
@@ -51,7 +51,7 @@
                   {% endfor %}
                 </div>
                 <li>
-                    <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Archive</a>
+                    <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Archive<i class="fa fa-archive fa-fw"></i></a>
                 </li>
                 <li>
                     <a href="{{ site.baseurl | replace: '//', '/' }}/typography">Typography</a>
