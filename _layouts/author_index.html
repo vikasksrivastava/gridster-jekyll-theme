@@ -25,19 +25,19 @@ layout: index-full
         {% if author.facebook or author.twitter or author.instagram or author.email %}
             <p class="social">
                 {% if author.facebook %}
-                    <a href="{{ author.facebook }}" target="_blank" class="noline"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a href="{{ author.facebook }}" target="_blank" class="noline"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                 {% endif %}
 
                 {% if author.twitter %}
-                    <a href="{{ author.twitter }}" target="_blank" class="noline"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="{{ author.twitter }}" target="_blank" class="noline"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
                 {% endif %}
 
                 {% if author.instagram %}
-                    <a href="{{ author.instagram }}" target="_blank" class="noline"><i class="fa fa-instagram fa-lg"></i></a>
+                    <a href="{{ author.instagram }}" target="_blank" class="noline"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
                 {% endif %}
 
                 {% if author.email %}
-                    <a href="mailto:{{ author.email }}" class="noline"><i class="fa fa-envelope fa-lg"></i></a>
+                    <a href="mailto:{{ author.email }}" class="noline"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                 {% endif %}
             </p>
         {% endif %}
