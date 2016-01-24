@@ -1,10 +1,11 @@
 ---
-layout: index-classic-sidebar-right
+layout: index-material-sidebar-left
 title: Categories
+sitemap: false
 ---
-
-{% for sitecategory in site.categories %}
-  {% assign categoryname = sitecategory[0] %}
+{% assign category_list = site.categories | sort %}
+{% for category in category_list %}
+  {% assign categoryname = category[0] %}
   <h2> {{ categoryname }} </h2>
   {% for post in site.categories[categoryname] %}
     {% include article_index_short.html %}

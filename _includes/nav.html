@@ -27,7 +27,8 @@
                   <li>
                       <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">All Categories</a>
                   </li>
-                  {% for sitecategory in site.categories %}
+                  {% assign sitecategories = site.categories | sort %}
+                  {% for sitecategory in sitecategories %}
                     {% assign categoryname = sitecategory[0] %}
                     <li>
                         <a href="{{ site.baseurl }}{{ site.category_dir }}/{{ categoryname }}">{{ categoryname }}</a>
@@ -41,7 +42,8 @@
                   <li>
                       <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">All Tags</a>
                   </li>
-                  {% for sitetag in site.tags %}
+                  {% assign sitetags = site.tags | sort %}
+                  {% for sitetag in sitetags %}
                     {% assign tagname = sitetag[0] %}
                     <li>
                         <a href="{{ site.baseurl }}{{ site.tag_dir }}/{{ tagname }}">{{ tagname }}</a>

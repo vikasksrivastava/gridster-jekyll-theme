@@ -1,5 +1,5 @@
 <ul class="category-list">
-    {% assign category_list = site.categories %}
+    {% assign category_list = site.categories | sort %}
     {% if category_list.first[0] == null %}
         {% for category in category_list %}
             <li><a href="{{ site.category_dir | prepend: site.baseurl | replace: '//', '/' }}/{{ category }}">{{ category }}</a></li>

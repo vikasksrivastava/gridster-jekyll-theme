@@ -1,5 +1,5 @@
 <ul class="tag-list">
-    {% assign tag_list = site.tags %}
+    {% assign tag_list = site.tags | sort %}
     {% if tag_list.first[0] == null %}
         {% for tag in tag_list %}
             <li><a href="{{ site.tag_dir | prepend: site.baseurl | replace: '//', '/' }}/{{ tag }}">{{ tag }}</a></li>
