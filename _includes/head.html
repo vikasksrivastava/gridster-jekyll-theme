@@ -3,10 +3,14 @@
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
 <link rel="stylesheet" href="{{ site.baseurl | replace: '//', '/' }}/css/main.css">
+{% if site.infinite_scroll == true %}
+	<script async src="{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.min.js"></script>
+{% else %}
+	<script async src="{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"></script>
+{% endif %}
 <link rel="stylesheet" id="color-change" href="">
 <link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
 {% feed_meta %}
-<script async src="{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"></script>
 <!-- Google Analytics 
 <script async>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
