@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  var host = "{{ site.domain }}";
+  if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 <meta charset="UTF-8">
 <title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}

@@ -1,6 +1,7 @@
 full_rebuild: true
 name: Gridster
 description: the material experience for jekyll
+domain: #If you want to force HTTPS, put down the domain without the http: e.g. example.com
 url: #place url
 baseurl: /gridster-jekyll-theme #place folder name if site is served in subfolder
 author: #For jekyll-feed
