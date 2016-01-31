@@ -3,17 +3,45 @@
   if ((host == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
 </script>
-<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 <meta charset="UTF-8">
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 <title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<link rel="stylesheet" href="{{ site.baseurl | replace: '//', '/' }}/css/main.css">
-{% if site.infinite_scroll == true %}
-	<script async src="{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.min.js"></script>
-{% else %}
-	<script async src="{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"></script>
-{% endif %}
+<script>
+	{% include fallback.min.js %}
+</script>
+<script async>
+    fallback.load({
+        main: "{{ site.baseurl | replace: '//', '/' }}/css/main.css",
+		fontawesome: [
+			"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
+			"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css",
+			"{{ site.baseurl | replace: '//', '/' }}/css/font-awesome.min.css"
+		],
+        jQuery: [
+            "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js",
+			"{{ site.baseurl | replace: '//', '/' }}/js/jquery-2.2.0.min.js"
+        ],
+		Materialize: [
+			"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js",
+			"{{ site.baseurl | replace: '//', '/' }}/js/materialize.min.js"
+		],
+        cssTransitionSupport: [
+			{% if site.infinite_scroll == true %}
+			"{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.min.js"
+			{% else %}
+			"{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"
+			{% endif %}
+        ]
+    }, {
+        shim: {
+            'Materialize': ['jQuery'],
+            'cssTransitionSupport': ['Materialize']
+        }
+    });
+</script>
 <link rel="stylesheet" id="color-change" href="">
 <link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
 {% feed_meta %}
