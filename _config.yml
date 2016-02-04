@@ -44,11 +44,9 @@ defaults:
       type: "standard"
       homedisplay: "featimg"
       comments: false
-markdown: kramdown
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
-relative_permalinks: false
+  hard_wrap: false
 exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md, jekyllbuild, Gemfile, Gemfile.lock, preview, img, LICENCE]
 gems:
   - jekyll-paginate
