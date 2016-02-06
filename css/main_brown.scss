@@ -8,8 +8,6 @@
 
 // add your palette here
 @import "toolbox/palettes/brown";
-// @import "toolbox/palettes/green";
-// @import "toolbox/palettes/teal";
 
 @import "base/reset";
 @import "base/base-style";
@@ -27,5 +25,6 @@
 @import "partials/components/widget";
 @import "partials/components/syntax";
 @import "partials/components/lightbox";
+@import "partials/components/toc";
 
 @import "temporary";

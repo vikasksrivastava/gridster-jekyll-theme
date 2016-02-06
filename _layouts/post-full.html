@@ -54,7 +54,7 @@ layout: compress
                                 <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
                             {% endif %}
                         {% endif %}
-                        <div class="post-content">
+                        <div id="post-content" class="post-content">
                             {{ content }}
                         </div>
                         {% if page.category or page.tags %}

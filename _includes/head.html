@@ -30,9 +30,17 @@
 		],
         cssTransitionSupport: [
 			{% if site.infinite_scroll == true %}
-			"{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.min.js"
+				{% if site.sidebar_toc == true %}
+					"{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.toc.min.js"
+				{% else %}
+					"{{ site.baseurl | replace: '//', '/' }}/js/global.infinite.min.js"
+				{% endif %}
 			{% else %}
-			"{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"
+				{% if site.sidebar_toc == true %}
+					"{{ site.baseurl | replace: '//', '/' }}/js/global.toc.min.js"
+				{% else %}
+					"{{ site.baseurl | replace: '//', '/' }}/js/global.min.js"
+				{% endif %}
 			{% endif %}
         ]
     }, {
@@ -41,6 +49,15 @@
             'cssTransitionSupport': ['Materialize']
         }
     });
+{% if site.sidebar_toc == true %}
+	fallback.ready(function() {
+		$('#post-content').toc({
+	        renderIn:'#renderTOC',
+			showCollapsed: true,
+			minItemsToShowToc: 0
+		});
+	});
+{% endif %}
 </script>
 <link rel="stylesheet" id="color-change" href="">
 <link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
