@@ -1,6 +1,7 @@
 ---
 author: person
-layout: post-full
+layout: post
+sidebar: false
 title: Full Width Post
 featimg: 2.jpg
 tags: [text]
@@ -11,6 +12,7 @@ The featured image will be added at the beginning of the content, but not above 
 
 ```yml
 ---
-layout: post-full
+layout: post
+sidebar: false
 ---
 ```

@@ -1,6 +1,7 @@
 ---
 author: someone
-layout: post-full
+layout: post
+sidebar: false
 type: youtube
 yt-video-id: E802ZnXbnFY
 homedisplay: iframe
@@ -14,7 +15,8 @@ For a YouTube video, no embedding code is required, it all works through the vid
 
 ```yml
 ---
-layout: post-full
+layout: post
+sidebar: false
 type: youtube
 yt-video-id: E802ZnXbnFY
 homedisplay: iframe

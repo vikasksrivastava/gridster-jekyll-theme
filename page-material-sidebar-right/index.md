@@ -1,5 +1,8 @@
 ---
-layout: page-material-sidebar-right
+layout: page
+sidebar: true
+sidebar_type: material
+sidebar_position: right
 featimg: 6.jpg
 title: Page
 ---

@@ -1,6 +1,7 @@
 ---
 author: someone
-layout: post-full
+layout: post
+sidebar: false
 type: gallery
 featimg: gallery-2.jpg
 title: Gallery Alternative

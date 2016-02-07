@@ -81,3 +81,22 @@ title: "Posted by someone"
 ```
 
 Replace all `someone` with the author of interest.
+
+## Layout Simplified ##
+
+Index, Page, Post layouts are simplified. Instead of something like
+
+```yml
+layout: index-sidebar-material-left
+```
+
+It becomes
+
+```yml
+layout: index
+sidebar: true
+sidebar_type: material
+sidebar_position: left
+```
+
+The YAML front matter becomes longer, but the organization around the different layouts are greatly simplified. There's no more 5 variants of each of them. So in case of changing the layout, you need not to manually synchronizing between all of them.

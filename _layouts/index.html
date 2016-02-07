@@ -7,10 +7,17 @@ layout: compress
     <head>
         {% include head.html %}
     </head>
-
-    <body class="index has-classic-sidebar-left">
+<!-- use logic to toggle sidebar layouts -->
+{% if page.sidebar %}
+	<body class="index has-{{page.sidebar_type}}-sidebar-{{page.sidebar_position}}">
+{% else %}
+    <body class="index">
+{% endif %}
        <header class="head">
-           {% include header.html %}
+			<!-- use logic to toggle sidebar layouts -->
+			{% if page.sidebar == false or page.sidebar_type == "classic" %}
+	            {% include header.html %}
+            {% endif %}
            {% include nav.html %}
         </header>
         {% include search.html %}
@@ -24,7 +31,10 @@ layout: compress
                 <div class="articles">
                     {{ content }}
                 </div>
-                {% include classic-sidebar.html %}
+				<!-- use logic to toggle sidebar layouts -->
+				{% if page.sidebar %}
+					{% include {{page.sidebar_type}}-sidebar.html %}
+				{% endif %}
             </div>
         </div>
         {% include footer.html %}

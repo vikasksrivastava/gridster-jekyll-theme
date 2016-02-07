@@ -1,5 +1,8 @@
 ---
-layout: page-classic-sidebar-right
+layout: page
+sidebar: true
+sidebar_type: classic
+sidebar_position: right
 featimg: 6.jpg
 title: Page
 ---
