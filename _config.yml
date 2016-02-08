@@ -51,7 +51,7 @@ defaults:
 kramdown:
   input: GFM
   hard_wrap: false
-exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md, jekyllbuild, Gemfile, Gemfile.lock, preview, img, LICENCE]
+exclude: [.git, .gitignore, sass, .sass-cache, package.json, gruntfile.js, node_modules, README.md, jekyllbuild, Gemfile, Gemfile.lock, preview, img, LICENCE, Organizational Overview.*]
 gems:
   - jekyll-paginate
   - jekyll-sitemap
