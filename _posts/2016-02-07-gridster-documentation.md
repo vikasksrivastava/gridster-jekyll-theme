@@ -347,18 +347,6 @@ They do work pretty similarly, though.
 
 To use the archive page, just paste the include into the content section. Archives can be placed in pages or posts.
 
-For an archive by month:
-
-``` highlight
-{% include monthly_archive.html %}
-```
-
-and the archive by year:
-
-``` highlight
-{% include yearly_archive.html %}
-```
-
 ## Posts
 
 This is where your blog receives the Frankenstein lightning shocks and starts living.
