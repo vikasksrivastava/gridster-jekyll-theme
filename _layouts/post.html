@@ -69,22 +69,25 @@ layout: compress
                         <div id="post-content" class="post-content">
                             {{ content }}
                         </div>
-                        {% if page.category or page.tags %}
+                        {% if page.categories or page.tags %}
                         <div class="catsandtags">
-                            {% if page.category %}
+                            {% if page.categories %}
                             <span class="category">
-                                <span class="name">categories:</span>
-                                {{ page.categories | category_links }}
+                                <span class="name">Categories:</span>
+								{% for category in page.categories %}
+									<a href="{{site.category_dir | prepend: site.baseurl}}/{{ category | slugify }}">{{ category }}</a> &nbsp;
+                                {% endfor %}
                             </span>
                             {% endif %}
-                            {% if page.category and page.tags %}
-                                &bull;
+							
+                            {% if page.categories and page.tags %}
+                                <br>
                             {% endif %}
                             {% if page.tags %}
                             <span class="tags">
-                                <span class="name">tags:</span>
+                                <span class="name">Tags:</span>
                                 {% for tag in page.tags %}
-                                    <a href="{{ site.tag_dir | prepend: site.baseurl | replace: '//', '/' }}/{{ tag }}">{{ tag }}</a>
+                                    <a href="{{ site.tag_dir | prepend: site.baseurl}}/{{ tag | slugify }}">{{ tag }}</a> &nbsp;
                                 {% endfor %}
                             </span>
                             {% endif %}

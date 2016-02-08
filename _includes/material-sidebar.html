@@ -1,24 +1,8 @@
 <div class="sidebar material-sidebar">
-  
     <!-- toggle link for responsive version -->
     <span class="sidebar-toggle">
         <i class="fa fa-plus"></i>
     </span>
-    
     {% include header.html %}
-    <div id="renderTOC"></div>
-    <div class="widget">
-        <h3 class="title"><a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}/">Categories</a></h3>
-        {% include category_list.html %}
-    </div>
-    <div class="widget">
-        <h3 class="title"><a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}/">Tags</a></h3>
-        {% include tag_list.html %}
-    </div>
-
-    <div class="widget">
-        <h3 class="title"><a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}/">Authors</a></h3>
-        {% include author_list.html %}
-    </div>
-    
+    {% include sidebar.html %}
 </div>

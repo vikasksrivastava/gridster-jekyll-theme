@@ -21,38 +21,19 @@
                   {% endfor %}
                 </div>
                 <li>
-                    <a class="dropdown-button" href="#" data-activates='drop-category'>Categories<i class="fa fa-caret-down fa-fw"></i></a>
+                    <a class="dropdown-button" href="#" data-activates='drop-archive'>Archive<i class="fa fa-caret-down fa-fw"></i></a>
                 </li>
-                <div id="drop-category" class="dropdown-content">
+                <div id="drop-archive" class="dropdown-content">
                   <li>
-                      <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">All Categories</a>
+                      <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">Categories</a>
                   </li>
-                  {% assign sitecategories = site.categories | sort %}
-                  {% for sitecategory in sitecategories %}
-                    {% assign categoryname = sitecategory[0] %}
-                    <li>
-                        <a href="{{ site.baseurl }}{{ site.category_dir }}/{{ categoryname }}">{{ categoryname }}</a>
-                    </li>
-                  {% endfor %}
-                </div>
-                <li>
-                    <a class="dropdown-button" href="#" data-activates='drop-tag'>Tags<i class="fa fa-caret-down fa-fw"></i></a>
-                </li>
-                <div id="drop-tag" class="dropdown-content">
                   <li>
-                      <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">All Tags</a>
+                      <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">Tags</a>
                   </li>
-                  {% assign sitetags = site.tags | sort %}
-                  {% for sitetag in sitetags %}
-                    {% assign tagname = sitetag[0] %}
-                    <li>
-                        <a href="{{ site.baseurl }}{{ site.tag_dir }}/{{ tagname }}">{{ tagname }}</a>
-                    </li>
-                  {% endfor %}
+                  <li>
+                      <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Date</a>
+                  </li>
                 </div>
-                <li>
-                    <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Archive<i class="fa fa-archive fa-fw"></i></a>
-                </li>
                 <li>
                     <a href="{{ site.baseurl | replace: '//', '/' }}/typography">Typography</a>
                 </li>

@@ -8,7 +8,7 @@ author: #For jekyll-feed
   name: temp
   email: temp@rary.com
   uri: https://temp.github.com
-permalink: /:title/
+permalink: /:categories/:title/
 paginate: 8
 paginate_path: /page/:num/
 infinite_scroll: true #change to false if you want to use pagination
@@ -56,6 +56,21 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+    - year
+  layouts:
+    category: category_index
+    tag: tag_index
+    year: archive_index
+  permalinks:
+    category: '/category/:name/' #should be in tag_dir
+    tag: '/tag/:name/'  #should be in category_dir
+    year: '/archive/:year/'
 
 sass:
   style: compressed

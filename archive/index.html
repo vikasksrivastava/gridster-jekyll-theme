@@ -3,11 +3,20 @@ layout: page
 sidebar: true
 sidebar_type: material
 sidebar_position: left
-title: Archive
+title: Posts from Year—
 sitemap: false
 ---
-<h4> by Month </h4>
-{% include monthly_archive.html %}
-<br/>
-<h4> by Year </h4>
-{% include yearly_archive.html %}
+<ul class="archive">
+  {% for post in site.posts %}
+    {% unless post.next %}
+        <h5><a href="{{ site.baseurl }}/archive/{{ post.date | date: '%Y' }}/">{{ post.date | date: '%Y' }}</a></h5>
+    {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+            <h5><a href="{{ site.baseurl }}/archive/{{ post.date | date: '%Y' }}/">{{ post.date | date: '%Y' }}</a></h5>
+        {% endif %}
+    {% endunless %}
+    {% include article_index_short.html %}
+  {% endfor %}
+</ul>
