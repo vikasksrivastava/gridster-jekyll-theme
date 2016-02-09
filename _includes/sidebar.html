@@ -63,7 +63,11 @@
 		{% assign range = max | minus: {{min}} %}
 		<!-- end detect -->
 		    {% for tag in tag_list %}
-				{% assign font_size = tag | last | size | minus: {{min}} | times: 70 | divided_by: {{range}} | plus: 71 %} <!-- scale between 71% (1/sqrt(2)) to (71+70)% (sqrt(2)) adjust the 71 and 70 to your need -->
+				{% if range == 0 %}
+					{% assign font_size = 100 %}
+				{% else %}
+					{% assign font_size = tag | last | size | minus: {{min}} | times: 70 | divided_by: {{range}} | plus: 71 %} <!-- scale between 71% (1/sqrt(2)) to (71+70)% (sqrt(2)) adjust the 71 and 70 to your need -->
+				{% endif %}
 		        <li><a href="{{ site.tag_dir | prepend: site.baseurl}}/{{ tag[0] | slugify }}" style="font-size: {{font_size}}%">{{ tag[0] }}<sup>{{ tag | last | size }}</sup></a></li>
 		    {% endfor %}
 		{% assign tag_list = nil %}
