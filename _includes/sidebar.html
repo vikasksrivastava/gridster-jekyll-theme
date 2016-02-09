@@ -1,20 +1,70 @@
 <div id="renderTOC"></div>
 <div class="widget">
     <h3 class="title"><a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}/">Categories</a></h3>
-	<ul class="category-list">
-		{% assign category_list = site.categories | sort %}
-		    {% for category in category_list %}
-		        <li><a href="{{ site.category_dir | prepend: site.baseurl}}/{{ category[0] | slugify }}">{{ category[0] }}</a></li>
-		    {% endfor %}
-		{% assign category_list = nil %}
-	</ul>
+	{% assign category_list = site.categories | sort %}
+	<!-- level 0 -->
+	<ol class="category-list">
+	{% for category0 in category_list %} <!-- change level here -->
+		{% assign printed0 = false %} <!-- change level here -->
+		{% for post in site.posts %}
+			{% if post.categories[0] == category0[0] and printed0 == false %} <!-- change level here -->
+				<li><a href="{{ site.category_dir | prepend: site.baseurl}}/{{ category0[0] | slugify }}">{{ category0[0] }}</a></li> <!-- change level here -->
+				{% assign printed0 = true %} <!-- change level here -->
+	<!-- level 1 -->
+				<ol>
+				{% for category1 in category_list %} <!-- change level here -->
+					{% assign printed1 = false %} <!-- change level here -->
+					{% for post in site.posts %}
+						{% if post.categories[0] == category0[0] and post.categories[1] == category1[0] and printed1 == false %} <!-- change level here -->
+							<li><a href="{{ site.category_dir | prepend: site.baseurl}}/{{ category1[0] | slugify }}">{{ category1[0] }}</a></li> <!-- change level here -->
+							{% assign printed1 = true %} <!-- change level here -->
+				<!-- level 2 -->
+					<ol>
+					{% for category2 in category_list %} <!-- change level here -->
+						{% assign printed2 = false %} <!-- change level here -->
+						{% for post in site.posts %}
+							{% if post.categories[0] == category0[0] and post.categories[1] == category1[0] and post.categories[2] == category2[0] and printed2 == false %} <!-- change level here -->
+								<li><a href="{{ site.category_dir | prepend: site.baseurl}}/{{ category2[0] | slugify }}">{{ category2[0] }}</a></li> <!-- change level here -->
+								{% assign printed2 = true %} <!-- change level here -->
+					<!-- level 3 -->
+					<!-- end of level 3 -->
+							{% endif %}
+						{% endfor %}
+					{% endfor %}
+					</ol>
+				<!-- end of level 2 -->
+						{% endif %}
+					{% endfor %}
+				{% endfor %}
+				</ol>
+	<!-- end of level 1 -->
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	</ol>
+	<!-- end of level 0 -->
 </div>
 <div class="widget">
     <h3 class="title"><a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}/">Tags</a></h3>
 	<ul class="tag-list">
 		{% assign tag_list = site.tags | sort %}
+		<!-- detect min and max size of tag -->
+		{% assign min = site.posts.size %}
+		{% assign max = 0 %}
+		{% for tag in tag_list %}
+			{% assign tag_size = {{tag | last | size }} %}
+			{% if min > tag_size %}
+				{% assign min = tag_size %}
+			{% endif %}
+			{% if max < tag_size %}
+				{% assign max = tag_size %}
+			{% endif %}
+		{% endfor %}
+		{% assign range = max | minus: {{min}} %}
+		<!-- end detect -->
 		    {% for tag in tag_list %}
-		        <li><a href="{{ site.tag_dir | prepend: site.baseurl}}/{{ tag[0] | slugify }}">{{ tag[0] }}</a></li>
+				{% assign font_size = tag | last | size | minus: {{min}} | times: 70 | divided_by: {{range}} | plus: 71 %} <!-- scale between 71% (1/sqrt(2)) to (71+70)% (sqrt(2)) adjust the 71 and 70 to your need -->
+		        <li><a href="{{ site.tag_dir | prepend: site.baseurl}}/{{ tag[0] | slugify }}" style="font-size: {{font_size}}%">{{ tag[0] }}<sup>{{ tag | last | size }}</sup></a></li>
 		    {% endfor %}
 		{% assign tag_list = nil %}
 	</ul>
