@@ -27,6 +27,9 @@
 @import "partials/components/widget";
 @import "partials/components/syntax";
 @import "partials/components/lightbox";
-@import "partials/components/toc";
+
+{% if site.sidebar_toc %}
+	@import "partials/components/toc";
+{% endif %}
 
 @import "temporary";
