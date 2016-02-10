@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   var host = "{{ site.domain }}";
   if ((host == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
@@ -11,7 +11,7 @@
 <script>
 	{% include fallback.min.js %}
 </script>
-<script async>
+<script>
     fallback.load({
         main: "{{ site.baseurl | replace: '//', '/' }}/css/main.css",
 		fontawesome: [
