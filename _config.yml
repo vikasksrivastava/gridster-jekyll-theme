@@ -80,7 +80,7 @@ compress_html:
   comments: []
   endings: []
   ignore:
-    envs: []
+    envs: [development]
   blanklines: false
   profile: false
   startings: [html, head, body]
