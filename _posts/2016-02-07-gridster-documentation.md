@@ -10,6 +10,8 @@ pandoc -t markdown_github --normalize -s --wrap=none --atx-headers -o ~/Download
 
 Some of the features from the original Grdster documentation isn't here. e.g. the links to different sections. However you can expand the Table of Contents on the sidebar to navigate to different sections.
 
+{% raw %}
+
 # Gridster - An Introduction
 
 Gridster is a powerful jekyll theme.
@@ -346,6 +348,18 @@ There are two different archive possibilities. One of them sorts the posts by mo
 They do work pretty similarly, though.
 
 To use the archive page, just paste the include into the content section. Archives can be placed in pages or posts.
+
+For an archive by month:
+
+``` highlight
+{% include monthly_archive.html %}
+```
+
+and the archive by year:
+
+``` highlight
+{% include yearly_archive.html %}
+```
 
 ## Posts
 
@@ -757,3 +771,5 @@ grunt deploy
 grunt buildcontrol will do it’s thing. Enter your credentials when you are asked to and then your site should be live.
 
 Yeahy!
+
+{% endraw %}
