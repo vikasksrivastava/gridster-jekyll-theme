@@ -49,7 +49,7 @@
             'cssTransitionSupport': ['Materialize']
         }
     });
-{% if site.sidebar_toc == true %}
+{% if page.sidebar_toc == true %}
 	fallback.ready(function() {
 		$('#post-content').toc({
 	        renderIn:'#renderTOC',
