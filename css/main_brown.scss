@@ -26,6 +26,7 @@
 @import "partials/components/syntax";
 @import "partials/components/lightbox";
 
+@import "partials/components/list";
 {% if site.sidebar_toc %}
 	@import "partials/components/toc";
 {% endif %}
