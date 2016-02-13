@@ -1,18 +1,17 @@
-<script>
+{% if jekyll.environment != "development" %}<script>
   var host = "{{ site.domain }}";
   if ((host == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
-</script>
+</script>{% endif %}
 <meta charset="UTF-8">
 <link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}" />
 <title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-{% if page.math %}
-<script type="text/x-mathjax-config">
-	MathJax.Ajax.config.path.Contrib="{% if jekyll.environment == "development" %}http://127.0.0.1:4000{% else %}https://ickc.github.io{% endif %}/MathJax-third-party-extensions",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});
-</script>
-{% endif %}
+<link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
+{% if page.math %}<script type="text/x-mathjax-config">
+	MathJax.Ajax.config.path.Contrib="{{ site.baseurl }}/MathJax-third-party-extensions",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});
+</script>{% endif %}
 <script>
 	{% include fallback.min.js %}
 </script>
@@ -20,17 +19,17 @@
     fallback.load({
         main: "{{ site.baseurl | replace: '//', '/' }}/css/main.css",
 		fontawesome: [
-			"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
-			"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css",
+			{% if jekyll.environment != "development" %}"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css",
+			"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css",{% endif %}
 			"{{ site.baseurl | replace: '//', '/' }}/css/font-awesome.min.css"
 		],
         jQuery: [
-            "https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js",
-            "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js",
+			{% if jekyll.environment != "development" %}"https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js",{% endif %}
 			"{{ site.baseurl | replace: '//', '/' }}/js/jquery-2.2.0.min.js"
         ],
 		Materialize: [
-			"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js",
+			{% if jekyll.environment != "development" %}"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js",{% endif %}
 			"{{ site.baseurl | replace: '//', '/' }}/js/materialize.min.js"
 		],
         cssTransitionSupport: [
@@ -49,7 +48,7 @@
 			{% endif %}
         ]{% if page.math %},
 		MathJax: [
-			"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full",
+			{% if jekyll.environment != "development" %}"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full",{% endif %}
 			"{{ site.baseurl | replace: '//', '/' }}/MathJax/MathJax.js?config=TeX-AMS_CHTML-full"
 		]{% endif %}
     }, {
@@ -84,9 +83,9 @@
 	{{ include_to_scssify | scssify }}
 </style>
 {% endif %}
-
 <link rel="stylesheet" id="color-change" href="">
-<link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
 {% feed_meta %}
-{% include analytics.html %}
+{% if jekyll.environment != "development" %}
+	{% include analytics.html %}
+{% endif %}
 {% include favicon.html %}

@@ -94,7 +94,7 @@ layout: compress
                         </div>
                         {% endif %}
                     </article>
-                    {% if page.comments %}
+                    {% if page.comments and jekyll.environment != "development" %}
                       {% include comment.html %}
                     {% endif %}
                     <div class="post-nav">
