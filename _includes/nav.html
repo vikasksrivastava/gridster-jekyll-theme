@@ -34,28 +34,7 @@
                       <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Yearly</a>
                   </li>
                 </div>
-                <li>
-                    <a href="{{ site.baseurl | replace: '//', '/' }}/typography">Typography</a>
-                </li>
-                <li><a class="dropdown-button" href="#" data-activates='drop-example'>Page Layouts&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
-                </li>
-                <div id="drop-example" class="dropdown-content">
-                    <li>
-                        <a href="{{ site.baseurl | replace: '//', '/' }}/page-full">page-full</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl | replace: '//', '/' }}/page-classic-sidebar-right">page classic sidebar right</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl | replace: '//', '/' }}/page-classic-sidebar-left">page classic sidebar left</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl | replace: '//', '/' }}/page-material-sidebar-right">page material sidebar right</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl | replace: '//', '/' }}/page-material-sidebar-left">page material sidebar left</a>
-                    </li>
-                </div>
+				  {% include nav_pages.html %}
                 <li>
                     <a href="#colorswitch" class="modal-trigger">Change Colors <i class="fa fa-cog"></i></a>
                 </li>
@@ -66,33 +45,21 @@
                 <li class="sicon">
                     <a href='#search'><i class="fa fa-search fa-lg fa-fw"></i></a>
                 </li>
-                {% if site.tumblr %}
+                {% if site.rss %}
                 <li class="social">
-                    <a href="{{ site.tumblr }}" class="tumblr"><i class="fa fa-tumblr fa-lg fa-fw"></i></a>
+                    <a href="{{ site.baseurl }}{{ site.rss }}" class="rss"><i class="fa fa-rss fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %} {% if site.email %}
                 <li class="social">
                     <a href="mailto:{{ site.email }}" class="noline"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                 </li>
-                {% endif %} {% if site.rss %}
+                {% endif %} {% if site.tumblr %}
                 <li class="social">
-                    <a href="{{ site.rss }}" class="rss"><i class="fa fa-rss fa-lg fa-fw"></i></a>
+                    <a href="{{ site.tumblr }}" class="tumblr"><i class="fa fa-tumblr fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %} {% if site.pinterest %}
                 <li class="social">
                     <a href="{{ site.pinterest }}" class="pinterest"><i class="fa fa-pinterest fa-lg fa-fw"></i></a>
-                </li>
-                {% endif %} {% if site.instagram %}
-                <li class="social">
-                    <a href="{{ site.instagram }}" class="instagram"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
-                </li>
-                {% endif %} {% if site.twitter %}
-                <li class="social">
-                    <a href="{{ site.twitter }}" class="twitter"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
-                </li>
-                {% endif %} {% if site.facebook %}
-                <li class="social">
-                    <a href="{{ site.facebook }}" class="facebook"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %} {% if site.youtube %}
                 <li class="social">
@@ -105,6 +72,18 @@
                 {% endif %} {% if site.soundcloud %}
                 <li class="social">
                     <a href="{{ site.soundcloud }}" class="soundcloud"><i class="fa fa-soundcloud fa-lg fa-fw"></i></a>
+                </li>
+                {% endif %} {% if site.twitter %}
+                <li class="social">
+                    <a href="{{ site.twitter }}" class="twitter"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                </li>
+                {% endif %} {% if site.instagram %}
+                <li class="social">
+                    <a href="{{ site.instagram }}" class="instagram"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
+                </li>
+                {% endif %} {% if site.facebook %}
+                <li class="social">
+                    <a href="{{ site.facebook }}" class="facebook"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %}
             </ul>
