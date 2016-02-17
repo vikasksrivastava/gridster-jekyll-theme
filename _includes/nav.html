@@ -49,9 +49,9 @@
                 <li class="social">
                     <a href="{{ site.baseurl }}{{ site.rss }}" class="rss"><i class="fa fa-rss fa-lg fa-fw"></i></a>
                 </li>
-                {% endif %} {% if site.email %}
+                {% endif %} {% if site.author.email %}
                 <li class="social">
-                    <a href="mailto:{{ site.email }}" class="noline"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
+                    <a href="mailto:{{ site.author.email }}" class="noline"><i class="fa fa-envelope fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %} {% if site.tumblr %}
                 <li class="social">
