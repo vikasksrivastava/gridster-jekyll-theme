@@ -17,28 +17,28 @@
                 <li>
                     <a href="#colorswitch" class="modal-trigger">Change Colors <i class="fa fa-cog"></i></a>
                 </li>
+	        </ul>
+            <ul id="drop-author" class="dropdown-content">
+              <li>
+                  <a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}">About</a>
+              </li>
+              {% for siteauthor in site.data.authors %}
+                <li>
+                    <a href="{{ site.baseurl }}{{ site.author_dir }}/{{ siteauthor.id }}">{{ siteauthor.name }}</a>
+                </li>
+              {% endfor %}
             </ul>
-                <div id="drop-author" class="dropdown-content">
-                  <li>
-                      <a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}">About</a>
-                  </li>
-                  {% for siteauthor in site.data.authors %}
-                    <li>
-                        <a href="{{ site.baseurl }}{{ site.author_dir }}/{{ siteauthor.id }}">{{ siteauthor.name }}</a>
-                    </li>
-                  {% endfor %}
-                </div>
-                <div id="drop-archive" class="dropdown-content">
-                  <li>
-                      <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">Categories</a>
-                  </li>
-                  <li>
-                      <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">Tags</a>
-                  </li>
-                  <li>
-                      <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Yearly</a>
-                  </li>
-                </div>
+            <ul id="drop-archive" class="dropdown-content">
+              <li>
+                  <a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}">Categories</a>
+              </li>
+              <li>
+                  <a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}">Tags</a>
+              </li>
+              <li>
+                  <a href="{{ site.baseurl | replace: '//', '/' }}/archive">Yearly</a>
+              </li>
+            </ul>
         </nav>
         <nav class="iconnav">
             <ul>
