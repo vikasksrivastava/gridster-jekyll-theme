@@ -8,7 +8,6 @@
 <title>{{ site.name }}{% if page.title %} - {{ page.title }} {% endif%}</title>
 {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
-<link rel="stylesheet" id="switch-style" href="{{ site.baseurl | replace: '//', '/' }}/css/grid.css" media="none" onload="if(media!='all')media='all'">
 {% if page.math %}<script type="text/x-mathjax-config">
 	MathJax.Ajax.config.path.Contrib="{{ site.baseurl }}/MathJax-third-party-extensions",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});
 </script>{% endif %}
