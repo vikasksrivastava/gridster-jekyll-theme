@@ -8,14 +8,14 @@ author: #For jekyll-feed
   name: Kolen
   email: khhkcheung@gmail.com #Also used in nav
   uri: https://ickc.github.io/about/
-  twitter: "#" # for jekyll-seo-tag, temporary fix to the incompatibility with site.data.authors
+  twitter: "#" #name only. for jekyll-seo-tag, temporary fix to the incompatibility with site.data.authors
 tumblr: "#"
 pinterest: "#"
 instagram: "#"
 twitter: # for both nav & jekyll-seo-tag
-  username: "#"
+  username: "#" #name only
 facebook: # for both nav & jekyll-seo-tag
-  publisher: "#"
+  publisher: "#" #full link
 youtube: "#"
 vimeo: "#"
 soundcloud: "#"
