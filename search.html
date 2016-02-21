@@ -14,21 +14,19 @@ sitemap: false
             {% include nav.html %}
         </header>
         {% include search.html %}
-        <div class="margin">
-			<script>
-			  (function() {
-			    var cx = '{{site.cse}}';
-			    var gcse = document.createElement('script');
-			    gcse.type = 'text/javascript';
-			    gcse.async = true;
-			    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-			        '//cse.google.com/cse.js?cx=' + cx;
-			    var s = document.getElementsByTagName('script')[0];
-			    s.parentNode.insertBefore(gcse, s);
-			  })();
-			</script>
-			<gcse:searchresults-only queryParameterName="query"></gcse:searchresults-only>
-        </div>
+		<script>
+		  (function() {
+		    var cx = '{{site.cse}}';
+		    var gcse = document.createElement('script');
+		    gcse.type = 'text/javascript';
+		    gcse.async = true;
+		    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		        '//cse.google.com/cse.js?cx=' + cx;
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.insertBefore(gcse, s);
+		  })();
+		</script>
+		<gcse:searchresults-only queryParameterName="query"></gcse:searchresults-only>
         {% include footer.html %}
     </body>
 </html>
