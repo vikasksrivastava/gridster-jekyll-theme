@@ -8,6 +8,7 @@ author: #For jekyll-feed
   name: Kolen
   email: khhkcheung@gmail.com #Also used in nav
   uri: https://ickc.github.io/about/
+  twitter: "#" # for jekyll-seo-tag, temporary fix to the incompatibility with site.data.authors
 tumblr: "#"
 pinterest: "#"
 instagram: "#"
