@@ -73,17 +73,17 @@
                 <li class="social">
                     <a href="{{ site.soundcloud }}" class="soundcloud"><i class="fa fa-soundcloud fa-lg fa-fw"></i></a>
                 </li>
-                {% endif %} {% if site.twitter %}
+                {% endif %} {% if site.twitter.username %}
                 <li class="social">
-                    <a href="{{ site.twitter }}" class="twitter"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                    <a href="https://twitter.com/{{ site.twitter.username }}" class="twitter"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %} {% if site.instagram %}
                 <li class="social">
                     <a href="{{ site.instagram }}" class="instagram"><i class="fa fa-instagram fa-lg fa-fw"></i></a>
                 </li>
-                {% endif %} {% if site.facebook %}
+                {% endif %} {% if site.facebook.publisher %}
                 <li class="social">
-                    <a href="{{ site.facebook }}" class="facebook"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id={{ site.facebook.publisher }}" class="facebook"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
                 </li>
                 {% endif %}
             </ul>
