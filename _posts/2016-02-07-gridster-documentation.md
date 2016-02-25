@@ -1,5 +1,6 @@
 ---
 title:	Gridster Documentation
+sidebar_toc:	true
 ---
 
 This documentation are from the original Gridster. Since the source is not available, I convert it to Markdown file by pandoc:
