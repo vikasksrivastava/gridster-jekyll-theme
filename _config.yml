@@ -61,6 +61,7 @@ defaults:
       type: "standard"
       homedisplay: "featimg"
       comments: false
+excerpt_separator: "<!-- more -->"
 kramdown:
   input: GFM
   hard_wrap: false
