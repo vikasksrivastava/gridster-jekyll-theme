@@ -67,7 +67,7 @@
             transform: translate(-50%, -50%) scale(0);
             font-size: 0em;
             font-weight: bold;
-            text-transform: uppercase;
+		    font-family: $sc-font;
             transition: .3s all ease-in-out;
         }
     }

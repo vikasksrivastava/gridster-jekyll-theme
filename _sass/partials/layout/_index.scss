@@ -20,7 +20,7 @@
     article{
 
         h1{
-            color: $primary-text !important;
+            color: $title-color !important;
             line-height: 48px;
             font-size: 24px;
             margin: 0;
@@ -41,7 +41,7 @@
 
             a{
                 margin-right: 20px;
-                text-transform: uppercase;
+			    font-family: $sc-font;
             }
         }
     }

@@ -16,7 +16,8 @@ body{
 
 // headings. Because that's faster than writing each of them separately.
 @for $i from 1 through 6{
-    $fontsize: ($h1-fontsize + 0.64) - ($i * 0.64);
+	$gap: ($h1-fontsize - $h6-fontsize)/5;
+    $fontsize: $h1-fontsize - ($i - 1) * $gap;
     h#{$i}{
         font-size: $fontsize; 
         line-height: 1.1*$fontsize; 
@@ -208,6 +209,9 @@ th {
 
     .modal-content {
         padding: 24px;
+	    h4 {
+			font-family: $sc-font;
+		}
     }
 
     .modal-footer {

@@ -1,109 +1,44 @@
 // FONT-FACE STUFF HERE
 //-----------------------
 
-// Roboto
-//--------
+/* Import ET Book styles
+   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */
 
-// light
+@charset "UTF-8";
+
 @font-face {
-    font-family: 'Roboto';
-    $path-part: 'Light';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoLight') format('svg');
-    font-weight: 300;
-    font-style: normal;
+  font-family: "et-book";
+  src: url("../fonts/et-book-roman-line-figures/et-book-roman-line-figures.eot");
+  src: url("../fonts/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book-roman-line-figures/et-book-roman-line-figures.woff") format("woff"), url("../fonts/et-book-roman-line-figures/et-book-roman-line-figures.ttf") format("truetype"), url("../fonts/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: normal
 }
 
-// regular
 @font-face {
-    font-family: 'Roboto';
-    $path-part: 'Medium';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoRegular') format('svg');
+  font-family: "et-book";
+  src: url("../fonts/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot");
+  src: url("../fonts/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff") format("woff"), url("../fonts/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf") format("truetype"), url("../fonts/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf") format("svg");
+  font-weight: normal;
+  font-style: italic
+}
+
+@font-face {
+  font-family: "et-book";
+  src: url("../fonts/et-book-bold-line-figures/et-book-bold-line-figures.eot");
+  src: url("../fonts/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix") format("embedded-opentype"), url("../fonts/et-book-bold-line-figures/et-book-bold-line-figures.woff") format("woff"), url("../fonts/et-book-bold-line-figures/et-book-bold-line-figures.ttf") format("truetype"), url("../fonts/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf") format("svg");
+  font-weight: bold;
+  font-style: normal
+}
+
+@font-face {
+    font-family: 'overlock_scregular';
+    src: url('../fonts/overlocksc-regular-webfont.eot');
+    src: url('../fonts/overlocksc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/overlocksc-regular-webfont.woff2') format('woff2'),
+         url('../fonts/overlocksc-regular-webfont.woff') format('woff'),
+         url('../fonts/overlocksc-regular-webfont.ttf') format('truetype'),
+         url('../fonts/overlocksc-regular-webfont.svg#overlock_scregular') format('svg');
     font-weight: normal;
     font-style: normal;
-}
 
-// bold
-@font-face {
-    font-family: 'Roboto';
-    $path-part: 'Black';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoBold') format('svg');
-    font-weight: 900;
-    font-style: normal;
-}
-
-// light italic
-@font-face {
-    font-family: 'Roboto';
-    $path-part: 'LightItalic';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoLightItalic') format('svg');
-    font-weight: 300;
-    font-style: italic;
-}
-
-// regular italic
-@font-face {
-    font-family: 'Roboto';
-    $path-part: 'MediumItalic';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoItalic') format('svg');
-    font-weight: normal;
-    font-style: italic;
-}
-
-// bold italic
-@font-face {
-    font-family: 'Roboto';
-    $path-part: 'BlackItalic';
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot');
-    src: url('../fonts/Roboto-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoBoldItalic') format('svg');
-    font-weight: 900;
-    font-style: italic;
-}
-
-// Source Code Pro
-//-----------------
-@font-face {
-    font-family: 'Source Code Pro';
-    $path-part: 'regular';
-    src: url('../fonts/sourcecodepro-#{$path-part}-webfont.eot');
-    src: url('../fonts/sourcecodepro-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.svg#sourcecodeproregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Source Code Pro';
-    $path-part: 'bold';
-    src: url('../fonts/sourcecodepro-#{$path-part}-webfont.eot');
-    src: url('../fonts/sourcecodepro-#{$path-part}-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.woff') format('woff'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.ttf') format('truetype'),
-         url('../fonts/sourcecodepro-#{$path-part}-webfont.svg#sourcecodeprobold') format('svg');
-    font-weight: bold;
-    font-style: normal;
 }

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @import "../toolbox/palettes/base";
 @import "../toolbox/palettes/default";
 
@@ -54,15 +56,17 @@ $link-color: $dark-primary-color;
 // String Variables (use strings as values | for Font Variables: Don't forget to include the fonts)
 //------------------------------------------
 
-$main-font: 'Roboto', 'Calibri', 'Arial', sans-serif;
+$main-font: "Gill Sans", "Gill Sans MT", Calibri, "PingFang HK", "蘋方-港", "PingFang TC", "蘋方-繁", "PingFang SC", "蘋方-簡", "PingFang", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", SimSun, 宋体, STXihei, "华文细黑", sans-serif;
 
 // set to $main-font if you don't want your headings to use another font
-$headings-font: $main-font;
+$headings-font: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, "PingFang HK", "蘋方-港", "PingFang TC", "蘋方-繁", "PingFang SC", "蘋方-簡", "PingFang", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", SimSun, 宋体, STXihei, "华文细黑", serif;
 
 // use values from text-transform [none|capitalize|uppercase|lowercase|initial|inherit]
 $headings-text-transform: none;
 
-$code-font: 'Source Code Pro', Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+$code-font: Consolas, "Liberation Mono", Menlo, Courier, "FangSong", "仿宋", STFangSong, "华文仿宋", monospace;
+
+$sc-font: "overlock_scregular", "Gill Sans", "Gill Sans MT", Calibri, "PingFang HK", "蘋方-港", "PingFang TC", "蘋方-繁", "PingFang SC", "蘋方-簡", "PingFang", "Microsoft YaHei New", "Microsoft Yahei", "微软雅黑", SimSun, 宋体, STXihei, "华文细黑", sans-serif;
 
 // size variables (use numbers as values (units as indicated ))
 
@@ -73,10 +77,10 @@ $main-font-weight: 300;
 $headings-font-weight: normal;
 
 // use px here
-$root-font-size: 17px;
+$root-font-size: 20px;
 
 // do not add a unit here
-$basic-line-height: 1.5;
+$basic-line-height: 1.35;
 
 // yes/no-dependant
 //------------------
@@ -108,13 +112,9 @@ $definition-list-border: 1px solid rgba(black, 0.1);
 // PROJECT SETTINGS
 //------------------
 
-// new heading font sizes (these come from materializecss.com)
-$h1-fontsize: 4.2rem;
-$h2-fontsize: 3.56rem;
-$h3-fontsize: 2.92rem;
-$h4-fontsize: 2.28rem;
-$h5-fontsize: 1.64rem;
-$h6-fontsize: 1rem;
+// new heading font sizes: others are calculated in /_sass/partials/_general.scss
+$h1-fontsize: 3.2rem;
+$h6-fontsize: 1.2rem;
 
 
 // collapses

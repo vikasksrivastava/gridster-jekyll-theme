@@ -3,7 +3,7 @@
     padding: 10px;
 
     .title{
-        @extend h5;
+	    font-family: $sc-font;
     }
 
     ul{
