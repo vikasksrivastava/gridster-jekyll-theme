@@ -7,7 +7,7 @@ body{
 
 .btn{
     @include button($accent-color, btn);
-    font-weight: 400;
+    font-weight: normal;
 }
 
 .btn-flat{

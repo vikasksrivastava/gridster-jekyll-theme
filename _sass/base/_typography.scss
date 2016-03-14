@@ -26,7 +26,7 @@
          url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
          url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
          url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoRegular') format('svg');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -65,7 +65,7 @@
          url('../fonts/Roboto-#{$path-part}-webfont.woff') format('woff'),
          url('../fonts/Roboto-#{$path-part}-webfont.ttf') format('truetype'),
          url('../fonts/Roboto-#{$path-part}-webfont.svg#RobotoItalic') format('svg');
-    font-weight: 400;
+    font-weight: normal;
     font-style: italic;
 }
 
@@ -92,7 +92,7 @@
          url('../fonts/sourcecodepro-#{$path-part}-webfont.woff') format('woff'),
          url('../fonts/sourcecodepro-#{$path-part}-webfont.ttf') format('truetype'),
          url('../fonts/sourcecodepro-#{$path-part}-webfont.svg#sourcecodeproregular') format('svg');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -104,6 +104,6 @@
          url('../fonts/sourcecodepro-#{$path-part}-webfont.woff') format('woff'),
          url('../fonts/sourcecodepro-#{$path-part}-webfont.ttf') format('truetype'),
          url('../fonts/sourcecodepro-#{$path-part}-webfont.svg#sourcecodeprobold') format('svg');
-    font-weight: 700;
+    font-weight: bold;
     font-style: normal;
 }
