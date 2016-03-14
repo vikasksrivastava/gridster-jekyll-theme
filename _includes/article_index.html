@@ -50,8 +50,8 @@
         <h1>{{ post.title }}</h1>
     </a>
     <p class="post-content">
-    {% if post.content contains '<!-- more -->' %}
-        {{ post.content | split:'<!-- more -->' | first }}
+    {% if post.content contains site.excerpt_separator %}
+        {{ post.content | split:site.excerpt_separator | first }}
     {% else %}
       {{ post.content | strip_html | truncatewords: 15 }}
     {% endif %}
