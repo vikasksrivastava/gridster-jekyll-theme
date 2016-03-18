@@ -1,6 +1,6 @@
 <div id="renderTOC"></div>
 <div class="widget">
-    <h3 class="title"><a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}/">Categories</a></h3>
+    <h1 class="title"><a href="{{ site.categories_dir | prepend: site.baseurl | replace: '//', '/' }}/">Categories</a></h1>
 	{% assign category_list = site.categories | sort %}
 	<!-- level 0 -->
 	<ol class="category-list">
@@ -45,7 +45,7 @@
 	<!-- end of level 0 -->
 </div>
 <div class="widget">
-    <h3 class="title"><a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}/">Tags</a></h3>
+    <h1 class="title"><a href="{{ site.tags_dir | prepend: site.baseurl | replace: '//', '/' }}/">Tags</a></h1>
 	<ul class="tag-list">
 		{% assign tag_list = site.tags | sort %}
 		<!-- detect min and max size of tag -->
@@ -74,7 +74,7 @@
 	</ul>
 </div>
 <div class="widget">
-    <h3 class="title"><a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}/">Authors</a></h3>
+    <h1 class="title"><a href="{{ site.authors_dir | prepend: site.baseurl | replace: '//', '/' }}/">Authors</a></h1>
 	<ul class="author-list">
 		{% for author in site.data.authors %}
 		    <li>
@@ -90,7 +90,7 @@
 	</ul>
 </div>
 <div class="widget">
-    <h3 class="title"><a href="{{ site.baseurl }}/archive/">Archive</a></h3>
+    <h1 class="title"><a href="{{ site.baseurl }}/archive/">Archive</a></h1>
 	<ul class="archive">
 	  {% for post in site.posts %}
 	    {% unless post.next %}
