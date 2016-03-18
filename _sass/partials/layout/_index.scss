@@ -1,12 +1,7 @@
 // Layout switcher on index pages
 .switch{
-    width: 100%;
-    font-size: .8em;
     margin-bottom: 10px;
-    letter-spacing: 10px;
     padding: 10px 0;
-    
-
     @media screen and (max-width: $layoutswitch-hiding-point){
         display: none;
     }
