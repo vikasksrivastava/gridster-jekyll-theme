@@ -26,7 +26,7 @@ $link-line-hover: no;
 
 // if set to yes, each paragraph following after another,
 // will have a margin-top
-$paragraph-gap: no;
+$paragraph-gap: yes;
 
 // if set to yes, settings for a container class will be added
 $container-settings: yes;
@@ -73,16 +73,19 @@ $sc-letter-spacing: .05em;
 // size variables (use numbers as values (units as indicated ))
 
 // font-weights, alternatively use: [light, normal, bold]
-$main-font-weight: 300;
+$main-font-weight: normal;
 
 // set $main-font-weight if you don't want your headings to use another font-weight
-$headings-font-weight: normal;
+$headings-font-weight: bold;
 
 // use px here
 $root-font-size: 20px;
 
 // do not add a unit here
 $basic-line-height: 1.35;
+
+$heading-margin: .8rem;
+
 
 // yes/no-dependant
 //------------------
@@ -93,7 +96,7 @@ $basic-line-height: 1.35;
 $background-color: #F9F9F9;
 
 // depends on: $paragraph-gap
-$paragraph-gap-size: 5px;
+$paragraph-gap-size: 1em;
 
 // depends on: $container-settings
 $container-class-name: 'content';
