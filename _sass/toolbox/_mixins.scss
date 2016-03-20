@@ -10,7 +10,7 @@
     outline: 0;
     padding: 0 2rem;
     font-family: $sc-font;
-    letter-spacing: .05em;
+    letter-spacing: $sc-letter-spacing;
     vertical-align: middle;
     
     @if $prop == btn{

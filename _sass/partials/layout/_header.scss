@@ -68,7 +68,7 @@
             font-size: 0em;
             font-weight: bold;
 		    font-family: $sc-font;
-	        letter-spacing: .05em;
+	        letter-spacing: $sc-letter-spacing;
             transition: .3s all ease-in-out;
         }
     }
