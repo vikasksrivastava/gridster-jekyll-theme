@@ -1,145 +1,45 @@
-// Tables depending on $include-table-style
-@if $include-table-style == yes {
-    table {
-        width: 100%;
-        border: $table-border;
-		overflow-x: auto;
-
-        thead tr {
-            background: darken($even-rows-bg, 5%);
-        }
-        
-        tr {
-            border-bottom: $table-border;
-
-            &:last-of-type {
-                border-bottom: $noborder;
-            }
-
-            &:nth-of-type(even) {
-                background: $even-rows-bg;
-            }
-        }
-
-        td, th {
-            padding: 3px 4px;
-            border-right: $table-border;
-
-            &:last-of-type {
-                border-right: $noborder;
-            }
-        }
-
-        th {
-            white-space: nowrap;
-            padding: 5px 7px;
-            font-size: 1.05em;
-            font-weight: bold;
-        }
-    }
-}
-
-// Tables
-table,
-th,
-td {
-    border: none;
-}
-
-table {
-    width: 100%;
-    display: table;
-    tbody tr:nth-child(odd) {
-        background-color: $table-striped-color;
-    }
-    tbody tr {
-        transition: background-color .25s ease;
-    }
-}
-
-thead {
-    font-weight: bold;
-    border-bottom: 1px solid $table-border-color;
-}
-
-td,
 th {
-    padding: 15px 5px;
-    display: table-cell;
-    text-align: left;
-    vertical-align: middle;
-    border-radius: 2px;
+    padding: 1px;
+}
+td {
+    padding: 5px;
 }
 
-// Responsive Table
-@media screen and (max-width: $table-collapse) {
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        border-spacing: 0;
-        display: block;
-        position: relative;
-        th, td {
-            margin: 0;
-            vertical-align: top;
-        }
-        th {
-            text-align: left;
-        }
-        thead {
-            display: block;
-            float: left;
-            tr {
-                display: block;
-                padding: 0 10px 0 0;
-                th::before {
-                    content: "\00a0";
-                }
-            }
-        }
-        tbody {
-            display: block;
-            width: auto;
-            position: relative;
-            overflow-x: auto;
-            white-space: nowrap;
-            tr {
-                display: inline-block;
-                vertical-align: top;
-            }
-        }
-        th {
-            display: block;
-            text-align: right;
-        }
-        td {
-            display: block;
-            min-height: 1.25em;
-            text-align: left;
-        }
-        tr {
-            padding: 0 10px;
-        }
-        /* sort out borders */
-
-        thead {
-            border: 0;
-            border-right: 1px solid $table-border-color;
-        }
-        th {
-            border-bottom: 0;
-            border-left: 0;
-        }
-        td {
-            border-left: 0;
-            border-right: 0;
-            border-bottom: 0;
-        }
-        tr {
-            border: 0;
-        }
-        tbody tr {
-            border-right: 1px solid $table-border-color;
-        }
-    }
+// From MultiMarkdown Composer 3
+table {
+    border: solid black;
+    border-width: 2px 0px;
+    empty-cells: hide;
+    border-spacing: 0px;
+    padding: 2px;
+    margin: 20px auto;
+}
+table caption {
+    margin: 5px;
+    text-align: center;
+    caption-side: bottom;
+}
+thead th {
+    border: solid gray;
+    border-width: 0 0 2px 0;
+    padding: 5px;
+}
+thead > tr:last-child > th {
+    border-style: none;
+}
+tbody > tr:first-child > td {
+    border: solid gray;
+    border-width: 1px 0 0 0;
+}
+tbody > tr:first-child > th {
+    border: solid gray;
+    border-width: 1px 0 0 0;
+}
+thead + tbody > tr:first-child > td {
+    border: solid black;
+    border-width: 1px 0 0 0;
+}
+thead + tbody > tr:first-child > th {
+    border: solid black;
+    border-width: 1px 0 0 0;
 }
