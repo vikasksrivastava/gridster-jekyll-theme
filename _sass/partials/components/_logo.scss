@@ -16,12 +16,11 @@
 }
 
 .gridster{
-    font-size:104.73602295px;
-    font-weight: bold;
+    font-size:110px;
     line-height:125%;
     fill:$primary-text;
-    font-family: $main-font;
-    text-transform: uppercase;
+    font-family: $sc-font;
+    letter-spacing: $sc-letter-spacing;
     transition: .3s all ease;
 }
 
@@ -30,7 +29,7 @@
     font-weight:300;
     line-height:125%;
     fill:$accent-color;
-    font-family: $main-font;
+    font-family: $headings-font;
     transition: .3s all ease;
 }
 
