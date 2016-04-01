@@ -27,6 +27,7 @@ copyright: "2015-2016 Gridster" # put your copyright info here excluding the © 
 disqus: ickc # disqus id in the form of <<id>>.disqus.com... ID only!
 analytics: "UA-33794695-2" # Google Analytics ID
 cse: "004435532597611518746:uxyjmivw31u" #Google Custom Search Engine id ("cx" variables)
+typekitid: "mit7aeg" #Put your TypeKit Kit ID here
 # Site Setup
 permalink: /:categories/:title/
 paginate: 8
