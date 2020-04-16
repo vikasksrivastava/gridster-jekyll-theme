@@ -1,8 +1,8 @@
 # Site Infos
 title: sdxguru
-description: "Learn Rinse Repeat"
-domain:	ickc.github.io #If you want to force HTTPS, put down the domain without the http: e.g. example.com
-url: https://ickc.github.io #place url
+description: "Learn. Rinse. Repeat"
+domain:	sdxguru.com #If you want to force HTTPS, put down the domain without the http: e.g. example.com
+url: http://www.sdxguru.com #place url
 baseurl: /gridster-jekyll-theme #place folder name if site is served in subfolder
 author: #For jekyll-feed
   name: Vikas
@@ -17,7 +17,7 @@ social: # for jekyll-seo-tag
   links: # put all the social links excluding twitter and facebook here as an array: ["link1", "link2"]
 google_site_verification: "uypg92X0VuLg3FnFTG1yLWrOe-_fAIkGOIPnqn-fFo4"
 # Site Setup Infos
-copyright: "2015-2016 Gridster" # put your copyright info here excluding the © sign. It will appears in the footer
+copyright: "SDXguru" # put your copyright info here excluding the © sign. It will appears in the footer
 disqus: ickc # disqus id in the form of <<id>>.disqus.com... ID only!
 analytics: "UA-33794695-2" # Google Analytics ID
 cse: "004435532597611518746:uxyjmivw31u" #Google Custom Search Engine id ("cx" variables)
