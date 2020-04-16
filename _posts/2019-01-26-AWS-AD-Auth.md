@@ -7,7 +7,6 @@ comments: true
 
 **This content is based on**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > **2018 AWS Federated Authentication with Active Directory Federation Services (AD FS)** https://aws.amazon.com/blogs/security/aws-federated-authentication-with-active-directory-federation-services-ad-fs/
 
