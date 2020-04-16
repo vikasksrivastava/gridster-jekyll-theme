@@ -16,7 +16,7 @@ $green: #4CAF50;
 $lightgreen: #C8E6C9;
 $darkgreen: #388E3C;
 
-$red: rgb(15, 233, 69);
+$red: #FF5252;
 
 //----------------------------
 
@@ -24,7 +24,7 @@ $indigo: #3F51B5;
 $darkindigo: #303F9F;
 $lightindigo: #C5CAE9;
 
-$pink: rgb(139, 245, 40);
+$pink: #FF4081;
 
 //----------------------------
 
@@ -40,4 +40,4 @@ $brown: #795548;
 $darkbrown: #5D4037;
 $lightbrown: #D7CCC8;
 
-$purple: rgb(141, 243, 7);
+$purple: #E040FB;
