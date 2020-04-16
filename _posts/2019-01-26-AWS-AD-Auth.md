@@ -206,9 +206,3 @@ mail
 sAMAccountName
 userPrincipalName
 ```
-
-<iframe width="700" height="500"
-src="https://www.youtube.com/embed/VP9wBGm982g"
-frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen></iframe>
