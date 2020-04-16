@@ -22,14 +22,10 @@ comments: true
 
 
 
-<!-- <iframe src="https://player.vimeo.com/video/396773347" width="800" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<iframe width="800" height="600" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-
-
-<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=hd720&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode.com/de/</a></small></div><div><small><a href="http://add-link-exchange.com">Add-link-exchange</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode es</a></small></div><div><small><a href="http://add-link-exchange.com">w://add-link-exchange.com</a></small></div></iframe>
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0"><div></div></iframe>
 
 
 
