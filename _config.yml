@@ -6,19 +6,19 @@ url: https://ickc.github.io #place url
 baseurl: /gridster-jekyll-theme #place folder name if site is served in subfolder
 author: #For jekyll-feed
   name: Kolen
-  email: khhkcheung@gmail.com #Also used in nav
-  uri: https://ickc.github.io/about/
+  email: vikas.k.srivastava@gmail.com #Also used in nav
+  uri: https://www.sdxguru.com
   twitter: "#" #name only. for jekyll-seo-tag, temporary fix to the incompatibility with site.data.authors
-tumblr: "#"
-pinterest: "#"
-instagram: "#"
-twitter: # for both nav & jekyll-seo-tag
+#tumblr: "#"
+#pinterest: "#"
+#instagram: "#"
+#twitter: # for both nav & jekyll-seo-tag
   username: "#" #name only
-facebook: # for both nav & jekyll-seo-tag
+#facebook: # for both nav & jekyll-seo-tag
   publisher: "#" #full link
 youtube: "#"
-vimeo: "#"
-soundcloud: "#"
+#vimeo: "#"
+#soundcloud: "#"
 social: # for jekyll-seo-tag
   links: # put all the social links excluding twitter and facebook here as an array: ["link1", "link2"]
 google_site_verification: "uypg92X0VuLg3FnFTG1yLWrOe-_fAIkGOIPnqn-fFo4"
