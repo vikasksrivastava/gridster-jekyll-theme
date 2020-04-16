@@ -23,7 +23,7 @@ comments: true
 
 
 
-<iframe src="https://player.vimeo.com/video/396773347" width="640" height="361" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/396773347" width="800" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 ## Install the Required Services
 
