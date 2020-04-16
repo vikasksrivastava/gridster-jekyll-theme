@@ -9,10 +9,6 @@ author: #For jekyll-feed
   email: vikas.k.srivastava@gmail.com #Also used in nav
   uri: https://www.sdxguru.com
   twitter: "#" #name only. for jekyll-seo-tag, temporary fix to the incompatibility with site.data.authors
-#tumblr: "#"
-#pinterest: "#"
-#instagram: "#"
-#twitter: # for both nav & jekyll-seo-tag
   username: "#" #name only
 #facebook: # for both nav & jekyll-seo-tag
   publisher: "#" #full link
