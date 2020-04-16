@@ -28,7 +28,6 @@ comments: true
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0"></iframe>
 
 
-ß
 ## Install the Required Services
 
 - Install these servcies , `Active Directory Domain Services` , `Active Directory Federation Services` and `DNS` , `IIS`
