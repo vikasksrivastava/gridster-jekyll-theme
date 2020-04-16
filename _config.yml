@@ -13,8 +13,6 @@ author: #For jekyll-feed
 #facebook: # for both nav & jekyll-seo-tag
   publisher: "#" #full link
 youtube: "#"
-#vimeo: "#"
-#soundcloud: "#"
 social: # for jekyll-seo-tag
   links: # put all the social links excluding twitter and facebook here as an array: ["link1", "link2"]
 google_site_verification: "uypg92X0VuLg3FnFTG1yLWrOe-_fAIkGOIPnqn-fFo4"
