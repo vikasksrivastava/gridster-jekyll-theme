@@ -25,7 +25,7 @@ comments: true
 <iframe width="560" height="315" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0"><div></div></iframe>
+<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0"></iframe>
 
 
 
