@@ -20,7 +20,7 @@ social: # for jekyll-seo-tag
 google_site_verification: "JXV4XCoZA5tdPk4wzJ7GuIO6fARnEDHK7Ds6pMDUHew"
 # Site Setup Infos
 copyright: "SDXguru" # put your copyright info here excluding the © sign. It will appears in the footer
-disqus: sdxguru-com # vikassri disqus id in the form of <<id>>.disqus.com... ID only!
+disqus: sdxguru-com.disqus.com # vikassri disqus id in the form of <<id>>.disqus.com... ID only!
 analytics: "UA-121913939-1" # Google Analytics ID
 cse: "017823778848942329431:rzeer430gmo" # vikassri Google Custom Search Engine id ("cx" variables)
 # <script async src="https://cse.google.com/cse.js?cx=017823778848942329431:rzeer430gmo"></script>
