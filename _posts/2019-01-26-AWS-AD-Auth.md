@@ -22,11 +22,39 @@ comments: true
 
 
 
-<iframe src="https://player.vimeo.com/video/396773347" width="800" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<!-- <iframe src="https://player.vimeo.com/video/396773347" width="800" height="600" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 
 
-<iframe width="800" height="600" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="600" src="https://www.youtube.com/embed/VP9wBGm982g?controls=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+</head>
+<body>
+
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_TyJeKKQh-s?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+</body>
+</html>
 
 ## Install the Required Services
 
