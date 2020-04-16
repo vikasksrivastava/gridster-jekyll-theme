@@ -84,7 +84,8 @@
 .main-menu {
     background: $primary-color;
     color: $primary-text-icon-color;
-    height: 64px;
+    height: 44px;
+    // vikassri height: 64px;
     // line-height: 64px;
     position: fixed;
     top: 0px;
@@ -93,6 +94,8 @@
     font-weight: normal;
     @include shadow(1);
     z-index: 2;
+    // vikassri opacity of main menu 
+    opacity: 0.5;
     
     a {
         font-size: 1rem;
