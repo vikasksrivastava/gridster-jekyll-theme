@@ -50,7 +50,7 @@ defaults:
     values:
       layout: "post"
       sidebar: true #true for sidebar false for none
-      sidebar_type: "material" #"material" or "classic"
+      sidebar_type: "material" #"ma terial" or "classic"
       sidebar_position: "left" #"left" or "right"
       sidebar_toc: false
       type: "standard"
