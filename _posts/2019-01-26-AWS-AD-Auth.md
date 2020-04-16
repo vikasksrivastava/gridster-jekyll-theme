@@ -29,27 +29,8 @@ comments: true
 
 
 
-
-<style>
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-}
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-</style>
-</head>
-<body>
-
-<div class="video-container">
 <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="541.12" height="304" type="text/html" src="https://www.youtube.com/embed/VP9wBGm982g?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&vq=hd720&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/de/">youtubeembedcode.com/de/</a></small></div><div><small><a href="http://add-link-exchange.com">Add-link-exchange</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode es</a></small></div><div><small><a href="http://add-link-exchange.com">w://add-link-exchange.com</a></small></div></iframe>
-</div>
+
 
 
 ## Install the Required Services
