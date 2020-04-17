@@ -1,9 +1,9 @@
 .highlighter-rouge{
-//    margin: vikassri code theme all below 30px 0;
+//    margin: 30px 0;
 }
 
 pre{
-    background-color: #12191f;
+    background-color: #f8f8f8;
     padding: 6px 10px;
     border-radius: 2px;
     overflow-x:auto;
@@ -11,8 +11,8 @@ pre{
 }
 
 $olivegray: #999988;
-$palepink: #2dc8e4;
-$darkred: #ccdfe7;
+$palepink: #e3d2d2;
+$darkred: #a61717;
 $medgray: #999;
 
 .highlight{
