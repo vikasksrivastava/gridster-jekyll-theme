@@ -3,6 +3,7 @@ layout: post
 title: AWS Certified Solution Architect Associate Notes
 description: My Notes on AWS CSA
 comments: true
+sidebar_toc:	true
 ---
 
 # Introduction
