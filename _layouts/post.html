@@ -6,6 +6,8 @@ layout: compress
 <html>
     <head>
         {% include head.html %}
+        <!-- vikassri below line  -->
+        <meta content="{{ site.baseurl }}/media{{ page.featimg }}" property="og:image">
     </head>
 <!-- use logic to toggle sidebar layouts -->
 {% if page.sidebar %}

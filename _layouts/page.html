@@ -32,8 +32,6 @@ layout: compress
                     <article>
                         {% if page.featimg %}
                             <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
-                            <!-- vikassris -->
-                            <meta content="{{ site.baseurl }}/media{{ page.featimg }}" property="og:image">
                         {% endif %}
 
                         <h1 class="page-title">
