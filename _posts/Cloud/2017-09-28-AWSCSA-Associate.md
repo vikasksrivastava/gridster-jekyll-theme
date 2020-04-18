@@ -3,6 +3,10 @@ layout: post
 title: AWS Certified Solution Architect Associate Notes
 description: My Notes on AWS CSA
 comments: true
+featimg: AWS_CSA.png
+tags: [AWS, Cloud, Certification]
+category: [AWS]
+sidebar_toc:	true
 ---
 
 # Introduction
