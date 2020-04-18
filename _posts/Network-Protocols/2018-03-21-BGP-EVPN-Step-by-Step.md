@@ -3,6 +3,10 @@ layout: post
 title: BGP EVPN Step by Step Configuration Example
 description: My Notes on AWS CSA
 comments: true
+featimg: NSO.png
+tags: [nso, automation, yang]
+category: [network-automation]
+sidebar_toc:	true
 ---
 
 <!-- TOC START min:1 max:5 link:true update:true -->

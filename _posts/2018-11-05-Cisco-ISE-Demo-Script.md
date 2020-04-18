@@ -3,6 +3,10 @@ layout: post
 title: Cisco ISE Demo Script
 description: My Notes preparing for CCIE Security v5
 comments: true
+featimg: NSO.png
+tags: [nso, automation, yang]
+category: [network-automation]
+sidebar_toc:	true
 ---
 
 # Cisco ISE Demo Script

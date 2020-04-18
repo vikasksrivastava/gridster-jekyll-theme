@@ -3,6 +3,10 @@ layout: post
 title: BGP with BFD on EVE-NG with CSR1000v
 description: BGP with BFD on EVE-NG with CSR1000v
 comments: true
+featimg: NSO.png
+tags: [nso, automation, yang]
+category: [network-automation]
+sidebar_toc:	true
 ---
 
 ## BGP with BFD on EVE-NG with CSR1000v

@@ -3,6 +3,10 @@ layout: post
 title: CCIE Security v5 Notes
 description: My Notes preparing for CCIE Security v5
 comments: true
+featimg: CCIE_Security.png
+tags: [CCIE_Security, Firepower, ISE]
+category: [CCIE]
+sidebar_toc:	true
 ---
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
