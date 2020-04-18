@@ -63,7 +63,7 @@ layout: compress
                         </div>
                         {% if page.type == "standard" %}
                             {% if page.featimg %}
-                                <!-- vikassri <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}"> -->
+                                <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
                             {% endif %}
                         {% endif %}
                         <div id="post-content" class="post-content">
