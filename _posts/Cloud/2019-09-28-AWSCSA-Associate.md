@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS Certified Solution Architect Associate Notes
+title: AWS SA Associate Notes
 description: My Notes on AWS CSA
 comments: true
 featimg: AWS_CSA.png
