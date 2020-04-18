@@ -7,7 +7,10 @@ layout: compress
     <head>
         {% include head.html %}
         <!-- vikassri below line  -->
-        <meta content="{{ site.baseurl }}/media/{{ page.featimg }}" property="og:image">
+        <!-- vikassri <meta content="/media/NSO.png" property="og:image">
+        <meta property="og:url" content="http://blog.sdxguru.com/network%20automation/Cisco-NSO/" /> -->
+        <!-- vikassri <meta content="{{ site.baseurl }}/media/{{ page.featimg }}" property="og:image"> -->
+        <meta content="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" property="og:image">
     </head>
 <!-- use logic to toggle sidebar layouts -->
 {% if page.sidebar %}
