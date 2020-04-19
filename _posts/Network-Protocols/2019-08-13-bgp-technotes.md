@@ -7,29 +7,6 @@ sidebar_toc:	true
 featimg: BGP.png
 ---
 
-<!-- TOC -->
-
-- [About BGP](#about-bgp)
-	- [Why do we call BGP a path-vector routing protocol?](#why-do-we-call-bgp-a-path-vector-routing-protocol)
-	- [BGP States during Connection](#bgp-states-during-connection)
-	- [What is ebgp-multihop](#what-is-ebgp-multihop)
-	- [Why do we need Internal BGP (iBGP)!](#why-do-we-need-internal-bgp-ibgp)
-	- [BGP Loop Prevention](#bgp-loop-prevention)
-	- [next-hop-self](#next-hop-self)
-	- [BGP Attribute and Path Selection](#bgp-attribute-and-path-selection)
-	- [Weight](#weight)
-		- [route-maps](#route-maps)
-	- [Local Preference](#local-preference)
-	- [Originate](#originate)
-	- [AS Path Prepend](#as-path-prepend)
-	- [Origin Code](#origin-code)
-	- [MED Attribute](#med-attribute)
-	- [PATHs](#paths)
-	- [Router ID](#router-id)
-	- [BGP Prefix List / Route Filtering](#bgp-prefix-list--route-filtering)
-	- [BGP Practice Questions](#bgp-practice-questions)
-
-<!-- /TOC -->
 
 # About BGP
 
