@@ -4,7 +4,7 @@ title: BGP Tech Notes
 description: My Notes on BGP
 comments: true
 sidebar_toc:	true
-featimg: /assets/markdown-img-paste-20190804141400889.png
+featimg: BGP.png
 ---
 
 <!-- TOC -->
