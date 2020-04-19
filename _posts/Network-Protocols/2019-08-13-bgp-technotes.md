@@ -31,6 +31,8 @@ featimg: BGP.png
 
 <!-- /TOC -->
 
+# About BGP
+
 > `RIP`, `OSPF` and `EIGRP` are all different but they have one thing in common; they want to find the shortest path to the destination
 > <span style="color:blue">There is only one routing protocol we currently use on the Internet which is BGP.
 
@@ -49,7 +51,7 @@ Take a look at the picture below.
 
 
 
-## About BGP
+## More BGP Foundation
 
 
 An `AS` is a collection of networks under a **single administrative** domain. The Internet is nothing more but a bunch of autonomous systems that are connected to each other. Within an autonomous system we use an IGP like OSPF or EIGRP. For routing between the different autonomous systems we use an EGP (external gateway protocol). The only EGP we use nowadays is BGP.
@@ -68,7 +70,7 @@ Again, in the above picture ; the ISPs (ISP1 and ISP2) can provide us one of the
 - `Default Route and Partial Routing Table` : A default route along with the the networks know to the ISP are advertised to the `Customer`. This case is better than the `Default Route` only option as we know little more than before.
 - `Full Routing Table`: This is the best case option , but know that this requires a lot of CPU and power on the customer router.
 
-### Why do we call BGP a path-vector routing protocol?
+## Why do we call BGP a path-vector routing protocol?
 
 <span style="color:blue">In the BGP routing table , instead of just the next hop for a specific network like other protocol (EIGRP, OSPF) we have the path (denoted by AS numbers).
 
@@ -103,7 +105,7 @@ router bgp 2
 > BGP uses TCP port 179
 
 
-### BGP States during Connection
+# BGP States during Connection
 Here are all the **BGP states** that we have:
 
 - `Idle`: BGP process has been shutdown or it is waiting for the next retry.
@@ -116,7 +118,7 @@ neighbor.
 exchange update messages with routing information.
 
 
-### What is ebgp-multihop
+# What is ebgp-multihop
 
 | Direct Peering   |  EBGP Multihop Peering |
 |---|---|
@@ -167,7 +169,7 @@ router bgp 2
 
 
 
-### Why do we need Internal BGP (iBGP)!
+# Why do we need Internal BGP (iBGP)!
 
 
 ![](/assets/markdown-img-paste-2019080708204756.png)
@@ -279,7 +281,7 @@ router bgp 2
 > **Key Learning Objective with this : Even if the path is known and is in the routing table its NOT reachable , this is unlike other routing protocols!**
 
 ---
-### BGP Loop Prevention
+## BGP Loop Prevention
 **`BGP Loop Prevention`** : *<span style="color:blue">If you see your own AS number in the AS path you don’t accept it since <span style="color:red">it means there is a loop.*
 
 Ok so ; with the **above logic** how would loop be prevented in case of `iBGP` **?**
