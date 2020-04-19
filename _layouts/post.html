@@ -50,7 +50,8 @@ layout: compress
                             {% endif %}
                         {% elsif page.type == "image" or page.type == "gallery" %}
                             {% if page.featimg %}
-                                <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
+                                 <!-- vikassri below style="display:none"  -->
+                                <img style="display:none" class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
                                 <!-- vikassri below <meta content="{{ site.baseurl }}/media/{{ page.featimg }}" property="og:image"> -->
                             {% endif %}
                         {% elsif page.type == "audio" %}
@@ -70,7 +71,8 @@ layout: compress
                         </div>
                         {% if page.type == "standard" %}
                             {% if page.featimg %}
-                                <img class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
+                                <!-- vikassri below style="display:none"  -->
+                                <img style="display:none" class="featimg" src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ page.featimg }}" alt="{{ page.featimg }}">
                             {% endif %}
                         {% endif %}
                         <div id="post-content" class="post-content">
