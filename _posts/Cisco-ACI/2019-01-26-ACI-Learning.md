@@ -1,8 +1,12 @@
 ---
 layout: post
-title: ACI Learning
-description: ACI Learning
+title: Cisco ACI Notes
+description: Cisco ACI Notes
 comments: true
+featimg: CiscoACI.png
+tags: [ACI, Cisco]
+category: [ACI]
+sidebar_toc:	true
 ---
 
 # Revised Learning Path
