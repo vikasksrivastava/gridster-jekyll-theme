@@ -3,9 +3,9 @@ layout: post
 title: AWS Networking Speciality
 description: My Notes on AWS Network Speciality
 comments: true
-featimg: NSO.png
-tags: [nso, automation, yang]
-category: [network-automation]
+featimg: AWSNetworkingSpeciality.png
+tags: [AWS, Cloud, Networking]
+category: [Cloud]
 sidebar_toc:	true
 ---
 
