@@ -3,9 +3,9 @@ layout: post
 title: Learning CloudFormation
 description: First steps with CloudFormation
 comments: true
-featimg: NSO.png
-tags: [nso, automation, yang]
-category: [network-automation]
+featimg: Cloudformation.png
+tags: [Cloudformation, AWS, Cloud]
+category: [Cloud]
 sidebar_toc:	true
 ---
 
