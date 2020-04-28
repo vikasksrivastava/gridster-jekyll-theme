@@ -15,7 +15,7 @@ author: #For jekyll-feed
   publisher: "#" #full link
 youtube: "#"
 social: # for jekyll-seo-tag
-  links: # put all the social links excluding twitter and facebook here as an array: ["link1", "link2"]
+  links: # put all the social  links excluding twitter and facebook here as an array: ["link1", "link2"]
 # siteverififcaiton added for sdx.org
 google_site_verification: "JXV4XCoZA5tdPk4wzJ7GuIO6fARnEDHK7Ds6pMDUHew"
 # Site Setup Infos
