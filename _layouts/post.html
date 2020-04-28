@@ -16,7 +16,8 @@ layout: compress
         <header class="head">
 			<!-- use logic to toggle sidebar layouts -->
 			{% if page.sidebar == false or page.sidebar_type == "classic" %}
-	            {% include small-header.html %}
+                {% include small-header.html %}
+                <!-- vikassri small-header above WAS header only -->
             {% endif %}
             {% include nav.html %}
         </header>
