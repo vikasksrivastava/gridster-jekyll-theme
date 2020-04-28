@@ -16,10 +16,9 @@ layout: compress
         <header class="head">
 			<!-- use logic to toggle sidebar layouts -->
 			{% if page.sidebar == false or page.sidebar_type == "classic" %}
-	            {% include header.html %}
+	            {% include small-header.html %}
             {% endif %}
             {% include nav.html %}
-            <h1>POST PAGE BEING CALLED</h1>
         </header>
         {% include search.html %}
         <div class="margin">
