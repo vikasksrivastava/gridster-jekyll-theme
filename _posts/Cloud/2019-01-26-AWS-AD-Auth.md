@@ -6,7 +6,10 @@ comments: true
 featimg: AWSADIntegration.png
 tags: [AWS, Cloud]
 category: [Cloud]
-sidebar_toc:	true
+sidebar_toc: true
+type: youtube
+yt-video-id: VP9wBGm982g
+homedisplay: iframe
 ---
 
 # About BGP  are all different but they have one thing in common are all different but they have one thing in common
