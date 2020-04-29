@@ -7,7 +7,7 @@ sidebar_toc: true
 featimg: BGP.png
 ---
 
-
+# About BGP  are all different but they have one thing in common are all different but they have one thing in common
 
 ![](https://blog.sdxguru.com/assets/markdown-img-paste-20190804141400889.png)
 
