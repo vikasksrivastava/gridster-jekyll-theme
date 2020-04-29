@@ -3,10 +3,12 @@ layout: post
 title: BGP Tech Notes
 description: My Notes on BGP
 comments: true
-sidebar_toc:	true
-featimg: BGP.png
+sidebar_toc: true
+featimg: 1.png
 ---
 
+
+featimg: BGP.png
 ![](https://blog.sdxguru.com/assets/markdown-img-paste-20190804141400889.png)
 
 # About BGP
