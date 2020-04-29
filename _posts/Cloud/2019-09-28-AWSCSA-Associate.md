@@ -3,13 +3,13 @@ layout: post
 title: AWS SA Associate Notes
 description: My Notes on AWS CSA
 comments: true
-featimg: 1.jpg
+featimg: AWS_CSA.png
 tags: [AWS, Cloud, Certification]
 category: [AWS]
 sidebar_toc:	true
 ---
 
-featimg: AWS_CSA.png
+
 # Introduction
 
 ---

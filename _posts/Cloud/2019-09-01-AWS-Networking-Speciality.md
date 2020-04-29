@@ -3,13 +3,13 @@ layout: post
 title: AWS Networking Speciality
 description: My Notes on AWS Network Speciality
 comments: true
-featimg: 1.jpg
+featimg: AWSNetworkingSpeciality.png
 tags: [AWS, Cloud, Networking]
 category: [Cloud]
 sidebar_toc:	true
 ---
 
-featimg: AWSNetworkingSpeciality.png
+
 
 ### To be done
 
