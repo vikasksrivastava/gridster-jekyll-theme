@@ -4,11 +4,11 @@ title: BGP Tech Notes
 description: My Notes on BGP
 comments: true
 sidebar_toc: true
-featimg: 1.jpg
+featimg: BGP.png
 ---
 
 
-featimg: BGP.png
+
 ![](https://blog.sdxguru.com/assets/markdown-img-paste-20190804141400889.png)
 
 # About BGP
