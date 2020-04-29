@@ -1,15 +1,17 @@
 ---
 layout: post
-title: AWS IAM Integration with Active Directory for SSO/SAML
+title: AWS and AD Integration
 description: AWS IAM Integration with Active Directory for SSO/SAML
 comments: true
-featimg: 1.jpg
+featimg: AWSADIntegration.png
 tags: [AWS, Cloud]
 category: [Cloud]
 sidebar_toc:	true
 ---
 
-featimg: AWSADIntegration.png
+# About BGP  are all different but they have one thing in common are all different but they have one thing in common
+
+
 
 **This content is based on**
 

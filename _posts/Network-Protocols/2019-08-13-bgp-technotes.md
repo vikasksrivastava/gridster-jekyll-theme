@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BGP Tech Notes
+title: BGP Tech Notes and design
 description: My Notes on BGP
 comments: true
 sidebar_toc: true
