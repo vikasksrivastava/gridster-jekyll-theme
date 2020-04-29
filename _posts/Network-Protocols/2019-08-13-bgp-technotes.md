@@ -4,7 +4,7 @@ title: BGP Tech Notes
 description: My Notes on BGP
 comments: true
 sidebar_toc: true
-featimg: 1.png
+featimg: 1.jpg
 ---
 
 

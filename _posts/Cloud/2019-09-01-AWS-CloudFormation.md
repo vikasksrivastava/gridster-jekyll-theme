@@ -3,7 +3,7 @@ layout: post
 title: Learning CloudFormation
 description: First steps with CloudFormation
 comments: true
-featimg: 1.png
+featimg: 1.jpg
 tags: [Cloudformation, AWS, Cloud]
 category: [Cloud]
 sidebar_toc:	true

@@ -3,7 +3,7 @@ layout: post
 title: AWS IAM Integration with Active Directory for SSO/SAML
 description: AWS IAM Integration with Active Directory for SSO/SAML
 comments: true
-featimg: 1.png
+featimg: 1.jpg
 tags: [AWS, Cloud]
 category: [Cloud]
 sidebar_toc:	true
