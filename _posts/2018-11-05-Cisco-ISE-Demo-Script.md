@@ -3,12 +3,11 @@ layout: post
 title: Cisco ISE Demo Script
 description: My Notes preparing for CCIE Security v5
 comments: true
-featimg: NSO.png
+type: vimeo
+vimeo-embed: <iframe src="https://player.vimeo.com/video/107591790" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 tags: [nso, automation, yang]
 category: [network-automation]
 sidebar_toc:	true
-type: vimeo
-vimeo-embed: <iframe src="https://player.vimeo.com/video/107591790" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ---
 
 # Cisco ISE Demo Script
