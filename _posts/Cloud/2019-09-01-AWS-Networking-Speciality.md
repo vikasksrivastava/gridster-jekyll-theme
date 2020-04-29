@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS Networking Speciality
+title: AWS Networking 
 description: My Notes on AWS Network Speciality
 comments: true
 featimg: AWSNetworkingSpeciality.png
