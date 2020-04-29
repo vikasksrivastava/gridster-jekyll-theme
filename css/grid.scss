@@ -19,7 +19,7 @@ $twotoone: 530px;
     }
 
     article{
-        @include rowMachine(5, 1%, 25px);
+        @include rowMachine(5, 1%, 25px); //vikassri 4 to 5
 
         @media screen and (max-width: $fourtothree){
             @include rowMachine(3, 1%, 25px);
