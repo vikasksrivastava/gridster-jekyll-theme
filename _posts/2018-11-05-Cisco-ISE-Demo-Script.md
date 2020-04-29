@@ -7,6 +7,8 @@ featimg: NSO.png
 tags: [nso, automation, yang]
 category: [network-automation]
 sidebar_toc:	true
+type: vimeo
+vimeo-embed: <iframe src="https://player.vimeo.com/video/107591790" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 ---
 
 # Cisco ISE Demo Script
