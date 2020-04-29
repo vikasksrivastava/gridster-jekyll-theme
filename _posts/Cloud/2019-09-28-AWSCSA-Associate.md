@@ -7,6 +7,9 @@ featimg: AWS_CSA.png
 tags: [AWS, Cloud, Certification]
 category: [AWS]
 sidebar_toc:	true
+type: youtube
+yt-video-id: E802ZnXbnFY
+homedisplay: iframe
 ---
 
 # About BGP  are all different but they have one thing in common are all different but they have one thing in common
