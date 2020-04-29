@@ -47,8 +47,9 @@
                     {% elsif post.featimg contains '.jpg'%}
                     {% assign thumb = post.featimg | replace: '.jpg', '' %}
                         <!-- <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb | append: '.jpg' }}" alt="{{ thumb }}"> -->
-                        <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}">
-                    {% endif %}
+                        <!-- <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}"> -->
+                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" alt="{{ thumb }}">
+                        {% endif %}
                 </a>
         {% endif %}
     {% endif %}
