@@ -1,5 +1,5 @@
 <!-- this is the complete index for articles, as you can see it on the index page. Every Post type get's their own little settings. -->
-<!-- <script src="/js/lazysizes.min.js" async></script> -->
+<script src="/js/lazysizes.min.js" async></script>
 <article>
     {% if post.homedisplay == "iframe" %}
         {% if post.type == "vimeo" %}
@@ -25,32 +25,29 @@
                 <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
                     {% if post.featimg contains '.png'%}
                     {% assign thumb = post.featimg | replace: '.png', '' %}
-                    <!-- <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb | append: '.png' }}" alt="{{ thumb }}"> -->
+                    <!-- vikassri <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" alt="{{ thumb }}"> -->
                     <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" class="lazyload" alt="{{ thumb }}">
                     {% elsif post.featimg contains '.jpg'%}
                     {% assign thumb = post.featimg | replace: '.jpg', '' %}
-                    <!-- <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb | append: '.jpg' }}" alt="{{ thumb }}"> -->
-                    <!-- <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}"> -->
-                         <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" alt="{{ thumb }}">
+                        <!-- vikassri <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" alt="{{ thumb }}"> -->
+                        <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}">
                     {% endif %}
                 </a>
             {% endif %}
         {% endif %}
     {% else %} 
         {% if post.featimg %}
-                <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
-                    {% if post.featimg contains '.png'%}
-                    {% assign thumb = post.featimg | replace: '.png', '' %}
-                    <!-- <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb | append: '.png' }}" alt="{{ thumb }}">  -->
-                    <!-- <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" class="lazyload" alt="{{ thumb }}"> -->
-                    <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" alt="{{ thumb }}">
-                    {% elsif post.featimg contains '.jpg'%}
-                    {% assign thumb = post.featimg | replace: '.jpg', '' %}
-                        <!-- <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/{{ thumb | append: '.jpg' }}" alt="{{ thumb }}"> -->
-                        <!-- <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}"> -->
-                        <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" alt="{{ thumb }}">
-                        {% endif %}
-                </a>
+            <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/'}}" class="noline">
+                {% if post.featimg contains '.png'%}
+                {% assign thumb = post.featimg | replace: '.png', '' %}
+                <!-- vikassri <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" alt="{{ thumb }}"> -->
+                <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.png' }}" class="lazyload" alt="{{ thumb }}">
+                {% elsif post.featimg contains '.jpg'%}
+                {% assign thumb = post.featimg | replace: '.jpg', '' %}
+                    <!-- vikassri <img src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" alt="{{ thumb }}"> -->
+                    <img data-src="{{ site.media_folder | prepend: site.baseurl | replace: '//', '/'}}/crops/450x253/{{ thumb | append: '-450x253.jpg' }}" class="lazyload" alt="{{ thumb }}">
+                {% endif %}
+            </a>
         {% endif %}
     {% endif %}
     <span class="date">{{ post.date | date: '%B %d, %Y' }}</span>
