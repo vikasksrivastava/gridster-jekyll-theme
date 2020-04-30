@@ -31,6 +31,14 @@ sidebar_toc:	true
 </div>
 </html>
 
+
+
+<button data-toggle="collapse" data-target="#demo">Collapsible</button>
+
+<div id="demo" class="collapse">
+Lorem ipsum dolor text....
+</div>
+
 > **Good link for CFN  IDE Tips**
 > https://hodgkins.io/up-your-cloudformation-game-with-vscode
 
