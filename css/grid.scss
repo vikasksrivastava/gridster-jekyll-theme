@@ -22,11 +22,11 @@ $twotoone: 530px;
         @include rowMachine(5, 1%, 25px); //vikassri 4 to 5
 
         @media screen and (max-width: $fourtothree){
-            @include rowMachine(3, 1%, 25px);
+            @include rowMachine(4, 1%, 25px); //vikassri 3 to 4
         }
 
         @media screen and (max-width: $threetotwo) and (min-width: $twotoone + 1){
-            @include rowMachine(2, 3%, 25px);
+            @include rowMachine(3, 3%, 25px); //vikassri 2 to 3
         }
 
         @media screen and (max-width: $twotoone){
