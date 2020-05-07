@@ -84,11 +84,24 @@ https://www.cisco.com/c/en/us/support/cloud-systems-management/dna-center/produc
 ![](assets/markdown-img-paste-20200507133806404.png)
 
 
-# Traffic Flow in SDA
+# Traffic Flow in SDA (Wired)
 
 The pic below shows the basic VTEPs and VXLAN exncap decap locations in the Fabric. The packet is decapsulated and matched to the local VNI matching and sent on it.
 
 ![](assets/markdown-img-paste-20200507135126937.png)
+
+`Scenraio 1` : **Stays within the Fabric** , VTEP asks Control Plane on where the destination is , encapsulates into VXLAN and sends to other VTEP
+
+`Scenraio 2` : **Stays within the Fabric BUT differen Virtual Network** , Currently the Packet needs to go out to the R1 (Which is the Fusion Router) . It sits outside the fabirc and connects to the Border. it has multiple sub interface one per VN.
+(VN as the user networks)
+BGP is used to advertise the routes from the Border Nodes to teh Fusion Router.
+
+*Ofcourse this is not optimal , but this the solution we have today*
+
+`Scenario 3a`: **Packet routed outside to the Fabric to KNOWN** network. Once again VTEP asks for the location , Control plane responds with the address of the "Regular" border node.
+
+`Scenario 3b `: **Packet routed outside to the Fabric to UN-KNOWN** network. Once again VTEP asks for the location , Control plane responds with the address of the "DEFAULT" border node.
+
 
 For a source VTEP to know where the destination is , a Control Plane is needed (ip device trackign and LISP help with this)
 
@@ -107,3 +120,14 @@ Something like :
 Just like ACI it has **Anycast GWs** for SVIs shared across all nodes , These SVIs are same across all devices and also has the same MAC address (so device roaming is not a problem):
 
 ![](assets/markdown-img-paste-20200507141411514.png)
+
+
+# Traffic Flow in SDA (Wireless)
+
+- WLC talks to the controller (SDA) using LISP
+- WLC tells the wireless endpoitns coming on the network and notifyies this to the SDA Control Plane.
+- Local Mode AP connects to the edge switch and SSID is fabric mode enabled.
+
+*AP in Fabric Mode support VXLAN*
+
+*There is a mini VXLAN Tunnel between the edge switch and the AP*
