@@ -794,7 +794,8 @@ It makes sense to create the Target Groups first and then the Load Balancers
 <img src="/assets/markdown-img-paste-20180322112318970.png" alt="Drawing" style="width: 400px;"/>
 
 1. Create a Target Group
-<img src="/assets/markdown-img-paste-20180322132805821.png" alt="Drawing" style="width: 400px;"/>
+
+    <img src="/assets/markdown-img-paste-20180322132805821.png" alt="Drawing" style="width: 400px;"/>
 2. Add Target (instances) to the target group
 <img src="/assets/markdown-img-paste-2018032213302429.png" alt="Drawing" style="width: 400px;"/>
 <img src="/assets/markdown-img-paste-20180322133049555.png" alt="Drawing" style="width: 400px;"/>
@@ -820,7 +821,8 @@ Example is , that any time the path contains *pictures* we can forward it to the
 
 - Loadbalancing is  not occuring in multiple `Availaibility Zones`
 Enable Cross-Zone Loadbalancing
-<img src="/assets/markdown-img-paste-20180322161335110.png" alt="Drawing" style="width: 400px;"/>
+
+  <img src="/assets/markdown-img-paste-20180322161335110.png" alt="Drawing" style="width: 400px;"/>
 
 - If the Instance not coming up as health in the AWS, Check the ping protocol and make sure it is right.
 <img src="/assets/markdown-img-paste-20180322161603584.png" alt="Drawing" style="width: 400px;"/>
