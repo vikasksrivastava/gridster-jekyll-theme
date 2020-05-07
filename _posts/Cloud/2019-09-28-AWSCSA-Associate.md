@@ -128,7 +128,7 @@ Let look into one of the regions: <span style="color:blue">**`us-east`**</span>
 
 ---
 
-## AWS Indentity and Access Management
+# AWS Indentity and Access Management
 
 Now lets look at the `IAM` Components where you manager Users, roles and groups, IAM Consistes of :
 
@@ -141,7 +141,7 @@ Now lets look at the `IAM` Components where you manager Users, roles and groups,
 
 > **IAM is Global and does not require a region selection.**
 
-Now once you have enable IAM , you can use the link show in the picture below to login
+Now once you have enabled IAM , you can use the link show in the picture below to login.
 
 
 ![](/assets/markdown-img-paste-2019111907144369.png)
