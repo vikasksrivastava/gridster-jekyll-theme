@@ -143,6 +143,7 @@ Now lets look at the `IAM` Components where you manager Users, roles and groups,
 
 Now once you have enabled IAM , you can use the link show in the picture below to login.
 
+> The name below "vikassri" intially comes as a number "12352341231" which can be edited to an alphabetical name (has to be unique) . It a DNS change when you do it.
 
 ![](/assets/markdown-img-paste-2019111907144369.png)
 
@@ -842,14 +843,15 @@ This could happen if the `trigger` is too close for example CPU threshold `< 30 
 
 -------
 
-## Storage Services
+# Storage Services
 
-Notice the Transit service which are responsible for sending data in and out of S3 and Glacier.
-![](/assets/markdown-img-paste-2018032219013824.png)
+
 
 Different components of S3
 
 ![](/assets/markdown-img-paste-20180322190930356.png)
+
+## S3
 
 ### S3 Permissions
 
@@ -878,10 +880,34 @@ Different types of S3 Storage :
 
 > To move object to Glacier you have to use `Life Cycle Policies`
 
+#### S3 Consitency Model
+
+The S3 consistency model is a direct byproduct of the redundancy and highly resilient design.
+
+Each time you interact you may interact with a different storage node.
+
+When you make a change to an object. The change is 1st written to one storage node and then replicated to the others in the region. If you immediately read the object and your read is fast and the replication is slow you have a good chance of reading from a node that has not yet received it replication. Therefore you stand a chance of receiving **out-of-date- information**
+
+However if you write a new object, it does not exist anywhere else yet (until it has replicated/propagated). If you do a read before the replication completes, there is no out-of-date object to read and you will get nothing back, however (magic happens here) and a retry will get the new object back . At no point is there a chance of getting out-of-date information back.
+
 #### S3 Versioning
 
 By default versioning is disabled on all objects.  Once enable it cannt be disabled completely , but stopped for future objects.
 Versioning can only be setup at the bucket level.
+
+#### S3 Encryption
+
+- Encryption In Transit achived by SSL/TLS
+- Encryption at Rest (Server Side) is achived by
+  - S3 managed keys SSE-S3: Amazon maanges the keys for you.
+  - AWS key Management Service: You and Amazon manage the keys together.
+  - Server Side with Customer Provided SSE-C : You provide key to Amazon
+
+* Server Side Encryption - SSE
+
+Config Example (below)
+
+![](/assets/markdown-img-paste-20200507074521915.png)
 
 #### S3 Lifecycle managment
 
@@ -906,6 +932,29 @@ Sharing accross wed domains
 ![](/assets/markdown-img-paste-2018032220164126.png)
 
 To be able to share information between two different buckets for two different domains CORS have to be enabled.
+
+#### Cross Region Replication
+
+To enable S3 to replaicate across region. CRR requires versioning to be enabled.
+
+![](/assets/markdown-img-paste-20200507080307723.png)
+
+![](/assets/markdown-img-paste-20200507080329624.png)
+
+**Note that delete markers / and deletion of versions are not replciated** A safety feature.
+
+#### S3 Cross-Region Replication Monitor
+
+The Cross-Region Replication Monitor (CRR Monitor) solution **automatically checks the replication status of Amazon S3 objects across all AWS Regions** in a customer's account, and provides near real-time metrics and failure notifications to help customers identify failures and troubleshoot problems.
+
+The solution automatically provisions the necessary AWS services to monitor and view replication status, including AWS Lambda, Amazon CloudWatch, Amazon Simple Notification Service (Amazon SNS), AWS CloudTrail, Amazon Simple Queue Service (Amazon SQS), and Amazon DynamoDB, and offers an option to use Amazon Kinesis Data Firehose to archive replication metadata in Amazon S3.
+
+More details https://aws.amazon.com/solutions/cross-region-replication-monitor/
+
+
+
+Notice the Transit service which are responsible for sending data in and out of S3 and Glacier.
+![](/assets/markdown-img-paste-2018032219013824.png)
 
 #### Multipart Upload
 
@@ -1177,3 +1226,11 @@ Thursday : 3 -
 -------
 
 ## Hybrid Environments
+
+
+-------
+
+#### How to create a billing alarm
+
+Go to cloudwatch and create a billign alarm (as shown in the screenshot below)
+![](/assets/markdown-img-paste-20200507071831272.png)
