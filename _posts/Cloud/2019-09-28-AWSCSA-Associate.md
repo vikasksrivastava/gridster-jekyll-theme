@@ -952,6 +952,13 @@ The solution automatically provisions the necessary AWS services to monitor and 
 More details https://aws.amazon.com/solutions/cross-region-replication-monitor/
 
 
+#### Amazon S3 Transfer Acceleration
+
+Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration takes advantage of Amazon CloudFront’s globally distributed edge locations. As the data arrives at an edge location, data is routed to Amazon S3 over an optimized network path.
+
+When using Transfer Acceleration, additional data transfer charges may apply. For more information about pricing, see Amazon S3 Pricing
+
+![](/assets/markdown-img-paste-2020050708124458.png)
 
 Notice the Transit service which are responsible for sending data in and out of S3 and Glacier.
 ![](/assets/markdown-img-paste-2018032219013824.png)
@@ -965,6 +972,25 @@ Uploading files in pieces , *highly suggested* when objects are bigger than `100
 You send a physical device to AWS which AWS Uploads for you .
 
 #### Snowball
+
+![](/assets/markdown-img-paste-20200507084430725.png)
+
+Snowball is a petabyte-scale data transport solution that uses secure appliances.
+
+Comes in either a 50TB or 80TB size.
+
+Swnowball Edge has Storage and Compute Functins (Lambda)
+Snowball is like a mini AWS at your disposal. Example an airline is using it to record in fligh data and also compute.
+
+Snowmobile : 100PB data transfer truck .
+
+![](/assets/markdown-img-paste-20200507084803610.png)
+
+When to use a Snowball
+
+![](/assets/markdown-img-paste-20200507084835495.png)
+
+
 
 AWS Send you a transfer appliance which you can copy your data to to send .
 This is for PB Scale data.
@@ -1002,9 +1028,28 @@ Common Record types include :
 
 CloudFront is a global CDN which delivers content from an `origin` location to an `edge` locations .
 
+Edge Location : Location where content wil be cached. This is separate to an AWS region/AZ
+
+Origin : This is the origin of all the files the CDN fill distribute. This can be an S3 bucket,an EX2 instance an Elastic Load balancer or Route 53
+
+Distribution : This is the name iven to the CDN whcih consists of a collection of Edge Locations.
+
+> Edge Location are NOT Read Only , you can PUT objects to them as well.
+
+![](/assets/markdown-img-paste-2020050708235046.png)
+
+
+
 > In order to server a new version of an object, either create a new object with a new name or create an `invalidation` on the CloudFront distribution based on onject names.
 > Invalidations have cost so if you have to invalidate large CloudFront distributions then perhaps you should create a new distribution and move DNS names.
 
+![](/assets/markdown-img-paste-20200507083011827.png)
+
+![](/assets/markdown-img-paste-20200507083609690.png)
+
+Invalidations - Files types extensions which you dont want be cached.
+
+![](/assets/markdown-img-paste-20200507084108883.png)
 #### VPN Connection
 
 `Virtual Private Gateway` : It is the connector at the VPC Side , the `Customer Gateway` is the connector at the customer side.
@@ -1234,3 +1279,20 @@ Thursday : 3 -
 
 Go to cloudwatch and create a billign alarm (as shown in the screenshot below)
 ![](/assets/markdown-img-paste-20200507071831272.png)
+
+#### AWS Service Endpoints
+
+To connect programmatically to an AWS service, you use an endpoint. An endpoint is the URL of the entry point for an AWS web service.
+
+Regional endpoints
+Most Amazon Web Services offer a Regional endpoint that you can use to make your requests. The general syntax of a Regional endpoint is as follows.
+
+```sh
+protocol://service-code.region-code.amazonaws.com
+```
+
+For example, https://dynamodb.us-west-2.amazonaws.com is the endpoint for the Amazon DynamoDB service in the US West (Oregon) Region.
+
+The following table lists the name and code of each Region.
+
+More details : https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
