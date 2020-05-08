@@ -131,3 +131,48 @@ Just like ACI it has **Anycast GWs** for SVIs shared across all nodes , These SV
 *AP in Fabric Mode support VXLAN*
 
 *There is a mini VXLAN Tunnel between the edge switch and the AP*
+
+
+# DNA Center Installation
+
+### Login to CIMC and Verify the guidance provided on the isntall guide
+
+https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automation-and-management/dna-center/1-3-3-0/install_guide/2ndGen/b_cisco_dna_center_install_guide_1_3_3_0_2ndGen/b_cisco_dna_center_install_guide_1_3_2_0_M5_chapter_011.html
+
+![](assets/markdown-img-paste-20200508133121611.png)
+
+### Mount the DNA Cetner ISO and Install
+
+1. *Start the installation*
+![](assets/markdown-img-paste-20200508133339427.png)
+2. *Define the IP Addresses for Data and Cluster Links*
+![](assets/markdown-img-paste-20200508133411210.png)
+*Cluster Virtual IP is same and shared across all the DNA-Cs*
+3. *Configre the Optional Link*
+![](assets/markdown-img-paste-20200508133620972.png)
+4. *Set the Admin Accounts*
+![](assets/markdown-img-paste-20200508134148148.png)
+5. *Username to login to the console is `maglev`*
+![](assets/markdown-img-paste-20200508155203760.png)
+6. *Setup CCO Account - for SmartLicensing*
+![CCO Setup](assets/markdown-img-paste-20200508155457172.png)
+7. *Provide the details of IP Address management - Infoblox and Bluecat are the supported vendors*
+![IPAM](assets/markdown-img-paste-20200508160153702.png)
+
+### Initial navigating around in DNAC
+
+1. *Below shows the number of services running when the DNAC is up , should be a good number to tally when something is worng , the same section below also lists additional DNA Applicances if there are any*
+![](assets/markdown-img-paste-20200508160607715.png)
+2. *What each section does is colored below*
+![](assets/markdown-img-paste-20200508161232341.png)
+
+## Design Section (GUI Introduction)
+
+![](assets/markdown-img-paste-20200508174409570.png)
+![](assets/markdown-img-paste-20200508174341220.png)
+![](assets/markdown-img-paste-20200508174422724.png)
+![](assets/markdown-img-paste-20200508174433678.png)
+![](assets/markdown-img-paste-20200508174445242.png)
+![](assets/markdown-img-paste-20200508174456586.png)
+![](assets/markdown-img-paste-20200508174508269.png)
+![](assets/markdown-img-paste-20200508174522940.png)
