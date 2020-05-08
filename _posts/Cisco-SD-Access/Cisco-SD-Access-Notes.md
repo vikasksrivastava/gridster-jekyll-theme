@@ -166,7 +166,9 @@ https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automatio
 2. *What each section does is colored below*
 ![](assets/markdown-img-paste-20200508161232341.png)
 
-## Design Section (GUI Introduction)
+# (GUI Introduction)
+
+## Design Section (GUI)
 
 ![](assets/markdown-img-paste-20200508174409570.png)
 ![](assets/markdown-img-paste-20200508174341220.png)
@@ -176,3 +178,14 @@ https://www.cisco.com/c/en/us/td/docs/cloud-systems-management/network-automatio
 ![](assets/markdown-img-paste-20200508174456586.png)
 ![](assets/markdown-img-paste-20200508174508269.png)
 ![](assets/markdown-img-paste-20200508174522940.png)
+
+## Policy Section (GUI)
+
+![](assets/markdown-img-paste-20200508184537205.png)
+![](assets/markdown-img-paste-20200508184551396.png)
+![](assets/markdown-img-paste-20200508184602399.png)
+![](assets/markdown-img-paste-20200508184613624.png)
+![](assets/markdown-img-paste-20200508184628731.png)
+![](assets/markdown-img-paste-20200508184639664.png)
+
+## Provision Section (GUI)
