@@ -1011,9 +1011,47 @@ When to use a Snowball
 ![](/assets/markdown-img-paste-20200507084835495.png)
 
 
-
 AWS Send you a transfer appliance which you can copy your data to to send .
 This is for PB Scale data.
+
+#### S3 Path Deprecation
+
+https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
+
+**Old**
+
+https://**s3.amazonaws.com/jbarr-public**/images/ritchie_and_thompson_pdp11.jpeg
+
+
+**New**
+
+https://**jbarr-public.s3.amazonaws.com**/images/ritchie_and_thompson_pdp11.jpeg
+
+These URLs reference the same objects, but the objects are now in distinct DNS subdomains (jbarr-public.s3.amazonaws.com and jsb-public.s3.amazonaws.com, respectively). **The difference is subtle, but very important. When you use a URL to reference an object, DNS resolution is used to map the subdomain name to an IP address. With the path-style model, the subdomain is always s3.amazonaws.com or one of the regional endpoints; with the virtual-hosted style, the subdomain is specific to the bucket. This additional degree of endpoint specificity is the key that opens the door to many important improvements to S3.**
+
+
+#### Snowball Demo
+
+![Snowball Demo 1](assets/markdown-img-paste-20200516161430523.png)
+![Snowball Demo 2](assets/markdown-img-paste-20200516161546401.png)
+
+#### Athena vs Macie
+
+**Athena**
+Query data located in S3 in using Standard SQL
+- Pay per query / per TB Scanned
+- - No need to setup
+- Works directly
+
+Can be used for query log files , genrate business
+
+**Macie**
+
+macie is a essentially a security service which uses Machine Learning and NLP (Natural Language processing) which can discover and classify and protect PII / Sensitive data stored in S3.
+Can analyse CloudTrail logs for Suspicion
+Used for PCI-DSS
+
+
 
 #### Storage Gateway
 
