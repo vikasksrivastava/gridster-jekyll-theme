@@ -365,7 +365,7 @@ So for example , **you can group multiple discrete accounts** like the following
 
 **Best Practices:**
 
-- CloudTrail (AccessLogs) in master account and esnure the SCP does not let the same to be deleted at individiual account level.
+- CloudTrail (AccessLogs) in master account and ensure the SCP does not let the same to be deleted at individiual account level.
 - Do not create resources (`` etc) in Master Account, Use it for Billign , Manageent , Policies
 
 ## Service Control Policy
@@ -695,6 +695,7 @@ This could happen if the `trigger` is too close for example CPU threshold `< 30 
 
 AMI are the images/files that goes to the boot volume of the instance.
 
+
 ### Linux AMI Virtualisation Type :
 
 - **`HVM`**  **Hardware Virtual Machine** , Conside this like Intel VTx/d technology by which guests can take advantage of virtualisation feature supported by the CPU. Proved enhanced networking and GPU processing to the VM.
@@ -704,6 +705,16 @@ AMI are the images/files that goes to the boot volume of the instance.
 HVM is the recommended AMI type.
 
 > `ENA Enabled` : Means enhanced networking capabilities based provided by hardware extensions (HVM)
+
+
+
+**Public AMI Publishing: Hardening and Clean-up Requirements**
+
+https://aws.amazon.com/articles/public-ami-publishing-hardening-and-clean-up-requirements/
+
+**Guidelines for shared Linux AMIs**
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/building-shared-amis.html
 
 ##  Instance Types
 
@@ -719,7 +730,7 @@ Has the following virtual hardware components, you have to choose the right inst
 
   **Different Instance types**
 
-  <img src="assets/markdown-img-paste-20191201073012960.png" alt="Drawing" style="width: 600px;"/>
+  <img src="/assets/markdown-img-paste-20191201073012960.png" alt="Drawing" style="width: 600px;"/>
 
   An instance type is given a `Letter` and a `Number` so example `T` and `2` which becomes `T2`
 
@@ -774,6 +785,13 @@ If the instance is rebooted the data is retained.
 
 - You can take a snapshot to recreate the volume. Snapshots are stored in S3. You are only charged for the difference between the snapshots.
 - When a `restore` is done from this snapshot , the data is made availaible as they are read , which makes it slow. So you can make an script to access the entire disk so that all data is accessible.
+
+### Encrypted Root Device Volume Snapshot
+
+How to create a encrypted AMI Image from an un-encrypted volume atttached to an instance.
+
+![Encrypted Root Device Volume](assets/markdown-img-paste-20200517180828673.png)
+
 
 ## Lab
 
@@ -851,7 +869,7 @@ A physical network device you can attach to EC2 for HPC and Machine learning.
 
 ### CloudTrail (API Logging Service)
 
-- Logs all API calls.
+Logs AWS management Console actions and API Calls for activity tracking.
 
 ### SNS Notification Service
 
@@ -1165,6 +1183,10 @@ Notice the appearance of vpc-peer entry to point to in the route table
 
 #### AWS CLI Configuration
 
+Create a user , give it the role , download the keys and setup using `aws configure`
+
+![AWS CLI Setup](assets/markdown-img-paste-20200517183754861.png)
+
 `aws configure`
 
 `aws s3 mb s3://testbucket`
@@ -1318,16 +1340,41 @@ API Gateway also caches the responses as well .
 
 # CloudWatch Essentials
 
-CloudWatch is used to monitor AWS Services, such as ,ELB and S3.
+Cloudwatch is about monitoring performance.
+CloudWatch is used to monitor AWS Services, such as ,ELB and S3 , EC2 , AutoScaling Groups . It can monitor a lot of things.
+
+- EC2
+- Autoscaling Groups
+- ELB
+- Route53 Health
+- EBS Volumes
+- Storage Gateways
+- CloudFront
+
+Cloudwatch can monitor Host Level Metrics like:
+
+- CPU
+- Network
+- Disk
+- Status Check
+
 You monitor your environment by configuring and viewing Cloudwatch metrics.
 
-![](/assets/markdown-img-paste-20180405070816470.png)
+![Cloudwatch](/assets/markdown-img-paste-20180405070816470.png)
 
-CloudWatch Alarms allow for you to be notfiied when a certain defined threshold is met for CloudWatch Metrics.
+CloudWatch Alarms allow for you to be notfied when a certain defined threshold is met for CloudWatch Metrics.
 
-Tuesday : 3 - 4 PM
-Thursday : 3 -
+## CloudWatch Demo
 
+Creating a test CPU Alerting CloudWatch Alarm for an instance when CPU pegs
+
+![Cloudwatch Demo 1](assets/markdown-img-paste-20200517183111548.png)
+
+![Cloudwatch Demo 2](assets/markdown-img-paste-20200517183130413.png)
+
+## CloudTrail (API Logging Service)
+
+CloudTrail is not the same as CloudWatch , It logs AWS management Console actions and API Calls for activity tracking.
 
 -------
 

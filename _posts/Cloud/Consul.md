@@ -6,13 +6,13 @@
 
 - Configuring Software to Connect Services.
 - Hardcoding IP Address.
-- Hostnme into config files.
-- - Trying to update thise
-- With advent od docker , need to find critical services
+- Hostname into config files.
+- Trying to update this
+- With advent of docker , need to find critical services
 
 **What you will Learn in this course**
 
-- Consul is best tools to disocver and seervices directly
+- Consul is best tools to discover and services directly
 - Service Discover
 - DNS and HTTP API
 - Integrated health checking
