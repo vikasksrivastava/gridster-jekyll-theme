@@ -977,14 +977,14 @@ Enables access for S3 from one account to another.
 
 **Step 1.** Create a Role **S3_Cross_Account_Access** in the Source account which allows S3 Access - **Another AWS Account - 324833314171**
 
-![](assets/markdown-img-paste-20200516135322694.png)
-![](assets/markdown-img-paste-20200516135359212.png)
-![](assets/markdown-img-paste-20200516135544221.png)
+![](/assets/markdown-img-paste-20200516135322694.png)
+![](/assets/markdown-img-paste-20200516135359212.png)
+![](/assets/markdown-img-paste-20200516135544221.png)
 
 
 **Step2.** Notice "Give this link to the user..." on the other account who can now "Switch Roles" to get access to S3 in the source account.
 
-![](assets/markdown-img-paste-20200516135710961.png)
+![](/assets/markdown-img-paste-20200516135710961.png)
 
 
 
@@ -1052,8 +1052,8 @@ AWS Send you a transfer appliance which you can copy your data to to send .
 This is for PB Scale data.
 ## Snowball Demo
 
-![Snowball Demo 1](assets/markdown-img-paste-20200516161430523.png)
-![Snowball Demo 2](assets/markdown-img-paste-20200516161546401.png)
+![Snowball Demo 1](/assets/markdown-img-paste-20200516161430523.png)
+![Snowball Demo 2](/assets/markdown-img-paste-20200516161546401.png)
 
 ## Athena vs Macie
 
