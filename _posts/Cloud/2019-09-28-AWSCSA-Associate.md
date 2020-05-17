@@ -9,13 +9,13 @@ category: [AWS]
 sidebar_toc:	true
 ---
 
-# About BGP  are all different but they have one thing in common are all different but they have one thing in common
+This is summarised notes from AWS trainings attended from various different sources towards the AWS SA Associate exam.
 
 
-# Introduction
+# AWS Foundation
 
 ---
-### AWS Well Architected Framework
+## AWS Well Architected Framework
 
 The well oriented architecture consist of the following **`5`** Pillars ;  by following a process of **evaluating your architecture against each pillar**.
 
@@ -29,7 +29,7 @@ Each of these pillars are **<span style="color:blue"> questions you ask yourself
 
 ---
 
-### AWS Shared Security Model
+## AWS Shared Security Model
 
 AWS is responsible for the security of the global infrastructure and foundational services. The responsibility for security is shared between customer and AWS.
 
@@ -54,7 +54,7 @@ AWS is responsible for the security of the global infrastructure and foundationa
 
 ---
 
-### AWS Physical Organisation
+## AWS Physical Organisation
 
 
 At a very high level AWS can be broken down into two main blocks
@@ -147,7 +147,7 @@ Now once you have enabled IAM , you can use the link show in the picture below t
 
 ![](/assets/markdown-img-paste-2019111907144369.png)
 
-### IAM Policies
+## IAM Policies
 
 Here's where the IAM Policies exist in AWS
 
@@ -182,7 +182,7 @@ Groups are like AD Groups are also there  in a company where you segregate users
 
 So now the `policies` can be attached to the `groups` directy.
 
-### IAM Roles
+## IAM Roles
 
 **IAM Roles are an Important Concept to understand**
 
@@ -200,16 +200,16 @@ A real example is a AWS Instance trying to access S3
 
   - `Non AWS Account Holder` : Now what we integrate AWS with the AD in a company. The users from AD who are **authenticated via SAML** now need to be mapped to `Role` to be able to do things in the AWS
 
-  - `EC2 instance needing access to S3`
+  - ` instance needing access to S3`
 
-> An EC2 instance can only have one role attached to it .
+> An  instance can only have one role attached to it .
 
 > Credentials configure using the `aws-configure` command are store as cleartext int he `.aws` dir under the file `credentials`
 > which is `.aws/credentials`
 
 
 
-#### Role Assumption
+## Role Assumption
 
 Now lets say , the users below in the `DEV` group need access to the  resources in the `PROD`, then can **assume** a `Role` and be able to access the resource in `PROD`.
 
@@ -221,7 +221,7 @@ An `IAM Policy` is attached to an `IAM Role` which is then assigned to the `User
 
 Notice in the screenshot below , we have 3 different types of Roles:
 
-- **`AWS Service Roles`** : Like EC2 accessing S3
+- **`AWS Service Roles`** : Like  accessing S3
 - **`Role for Cross Account access`** : Allowing access for `DEV` IAM group to `PROD`
 - **`Role for Identity Provider Access`** : Federation and SAML , Facebook, Google.
 
@@ -241,10 +241,10 @@ When a user is created , he can have programmatic access to his environment usin
 
 **Now** `IAM Roles` also in the backend use "Security Access Keys" **BUT** they are short lived. This temporary set of access keys is provided by **Security Token Service**.
 
-#### Security Token Service
+## Security Token Service
 
 As mentioned above this a temporary credetials which allows access to the AWS Resource.
-So in the example of `EC2` accessing `S3` and `STS` is generated for the EC2 instance.
+So in the example of `` accessing `S3` and `STS` is generated for the  instance.
 
 The benefit is that the **credetials are not required to be embedded** in the application.
 STS times out / expires after certain time period.
@@ -271,7 +271,7 @@ The major difference between the **Assume** roles and **GetRoles**
 
 ---
 
-### IAM Identity Federation
+## IAM Identity Federation
 
 There are three primary ways of Identity Federation :
 
@@ -366,7 +366,7 @@ So for example , **you can group multiple discrete accounts** like the following
 **Best Practices:**
 
 - CloudTrail (AccessLogs) in master account and esnure the SCP does not let the same to be deleted at individiual account level.
-- Do not create resources (`EC2` etc) in Master Account, Use it for Billign , Manageent , Policies
+- Do not create resources (`` etc) in Master Account, Use it for Billign , Manageent , Policies
 
 ## Service Control Policy
 
@@ -431,13 +431,13 @@ Reference
 
 ---
 
-# Make A Template of a good section with Challenges , benefits , CloudFormation , Reference
+#### Make A Template of a good section with Challenges , benefits , CloudFormation , Reference
 
-# AWS Single Sign On
+##### AWS Single Sign On
 
-# AWS Tower
+##### AWS Tower
 
-# AWS Active Directory
+##### AWS Active Directory
 
 ---
 
@@ -460,7 +460,7 @@ Now as we further move ahead , the `VPC` :
 > **NACLs are not statefull , both INBOUND and OUTBOUND rules need to be created**
 
 
-
+# Networking in AWS
 
 <img src="/assets/markdown-img-paste-20180317161347849.png" alt="Drawing" style="width: 300px;"/>
 
@@ -502,7 +502,7 @@ Now as we further move ahead , the `VPC` :
 
   <img src="/assets/markdown-img-paste-20180317174000405.png" alt="Drawing" style="width: 200px;"/>
 
-### VPC Routing Basics
+## VPC Routing Basics
 
 - Now lets take a look at a deeper level on the VPC Routing Basics the `Internet  gateway`, `Subnets` and the `Routing table`.
 
@@ -539,7 +539,7 @@ Now as we further move ahead , the `VPC` :
   <img src="/assets/markdown-img-paste-20180318212412969.png" alt="Drawing" style="width: 300px;"/>
 
 
-### VPC Security
+## VPC Security
 
 - **`Network ACLs`** `allow` or `deny` traffic at the subnet level and are stateless, which means that the return traffic had to be `ALLOWED` for traffic for both direction.
 
@@ -548,7 +548,7 @@ Now as we further move ahead , the `VPC` :
 
 - **`Security Groups`** Just like Openstack Security groups but they are **statefull** . Security group **only supports** `allow` rules.
 
-### VPC Workflow
+## VPC Workflow
 
 1. Create the `VPC` and give it a `CIDR` Block range. **Notice** that you can also define `IPv6` CIDR ranges. When `Tenancy`  is set to dedicate you are **not sharing** your servers with the other users.
 <img src="/assets/markdown-img-paste-20180318160426965.png" alt="Drawing" style="width: 300px;"/>
@@ -574,20 +574,21 @@ Now **connect** the `Route Table` created above to the `Internet Gateway`. If yo
 
 
 -------
+# EC2 (Elastic Compute)
 
-## Server-Based Compute Services (EC2 Elastic Cloud Compute)
+## Server-Based Compute Services ( Elastic Cloud Compute)
 
-### EC2 Limits
+###  Limits
 
-- Take a look at the default EC2 Limits :
+- Take a look at the default  Limits :
 
   <img src="/assets/markdown-img-paste-20180318200924374.png" alt="Drawing" style="width: 300px;"/>
 
-### EC2 Purchasing Options
+###  Purchasing Options
 
 
 
-**There are 3 different types of EC2 Instances :**
+**There are 3 different types of  Instances :**
 
 - **`Ondemand`** Most expensive , run and destroy whenever you like. You care billed as per per `second` or per `hour`. **These differ based on Images** too , not all images support per second basis. A`mazon Linux` or `Ubuntu` offer per second pricing.
 
@@ -602,7 +603,7 @@ Now **connect** the `Route Table` created above to the `Internet Gateway`. If yo
   If the instance is **terminated by AWS** you **dont pay for that slot** of duration (1 minute or 1 hour) . If **you delete it**, **you pay** for it.
 
 
-### AMI's
+## AMI's
 
 AMI are the images/files that goes to the boot volume of the instance.
 
@@ -616,7 +617,7 @@ HVM is the recommended AMI type.
 
 > `ENA Enabled` : Means enhanced networking capabilities based provided by hardware extensions (HVM)
 
-### EC2 Instance Type :
+##  Instance Types
 
 Has the following virtual hardware components, you have to choose the right instance type **based on your application requirement** :
 
@@ -636,7 +637,7 @@ Has the following virtual hardware components, you have to choose the right inst
 
   Further T2 comes into a wide range for flavors - `t2.small` to `t2.xlarge`
 
-  All instance types are documented here : https://aws.amazon.com/ec2/instance-types/
+  All instance types are documented here : https://aws.amazon.com//instance-types/
 
   **T2 Burstable** : When you are not using CPU , you are building credits and you use these credits when you use the CPU. So its a credits based system.
 
@@ -645,13 +646,13 @@ Has the following virtual hardware components, you have to choose the right inst
 
 
 
-### EC2 Instance Metadata
+## Instance Metadata
 
 - `http://169.254.169.254/lates/user-data` Shows the **user data provided for bootstrapping**.
 
 - `http://169.254.169.254/lates/user-data` Displays **AMI, Instance Type** etc.
 
-### EC2 Instance Storage types
+##  Instance Storage types
 
 
 
@@ -711,14 +712,32 @@ If the instance is rebooted the data is retained.
 
 ### EFS Elastic File System
 
-- **Consider this like NFS** , this can be shared between multiple EC2 instances.
+- **Consider this like NFS** , this can be shared between multiple  instances.
+
+
+
+### ENI vs ENA vs EFA
+
+**ENI** - Elastic network Interface - essentially a virtual card.
+
+**EN** - Enhanced networking . Used SRIOV to provide high performance networking capabilities to supported instance types.
+
+  - ENA - 100Gbps
+  - Virtual Function - 10Gbps
+
+**Elastic Fabric Adapter**
+
+OS Bypass.
+A physical network device you can attach to EC2 for HPC and Machine learning.
+
+
 
 
 -------
 
 ## Server**less** Compute Services (AWS Lambda)
 
-- You do not need EC2 servers (Serverless) to run your application , you can directly run your programs here !
+- You do not need  servers (Serverless) to run your application , you can directly run your programs here !
 
   A picture says a thousand words :
 
@@ -738,7 +757,7 @@ If the instance is rebooted the data is retained.
 
 ### CloudWatch (Monitoring)
 
-- Used to monitor AWS Services such as EC2
+- Used to monitor AWS Services such as
 - Provides centralised monitoring and performance mentrics.
 - CloudWatch Alarms can be used a triggers.
 
@@ -760,7 +779,7 @@ If you notice in the picture below , we have now added a load balancer and an au
 
 <img src="/assets/markdown-img-paste-20180322075845612.png" alt="Drawing" style="width: 400px;"/>
 
-**`Elastic Loadbalancer`** : EC2 Service which loadbalances traffic to multiple EC2 instances across multiple `Availabilty Zones`.
+**`Elastic Loadbalancer`** :  Service which loadbalances traffic to multiple  instances across multiple `Availabilty Zones`.
 
 - Also `Elastic Loadbalancer` should also be paired with `Auto Scaling Group` for High Availabilty.
 
@@ -1284,7 +1303,7 @@ Components of SWF :
 
 API Gateway is a fully managed service which allows you to create and manage your own APIs.
 
-Lets say you have an application running on Lambda Functions and EC2 .
+Lets say you have an application running on Lambda Functions and  .
 
 ![](/assets/markdown-img-paste-20180405065436505.png)
 
@@ -1297,7 +1316,7 @@ API Gateway also caches the responses as well .
 
 ### CloudWatch Essentials
 
-CloudWatch is used to monitor AWS Services, such as EC2,ELB and S3.
+CloudWatch is used to monitor AWS Services, such as ,ELB and S3.
 You monitor your environment by configuring and viewing Cloudwatch metrics.
 
 ![](/assets/markdown-img-paste-20180405070816470.png)
