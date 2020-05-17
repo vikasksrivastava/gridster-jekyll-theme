@@ -571,7 +571,95 @@ Now **connect** the `Route Table` created above to the `Internet Gateway`. If yo
 - 5 Internet Gateways per region , this is equal the VPC limit as **one VPC can only have one internet gateway**.
 - 50 VPN Connections per region.
 
+# Advanced Networking
 
+
+If you notice in the picture below , we have now added a load balancer and an autoscaling group which now spans two vPCs .
+
+<img src="/assets/markdown-img-paste-20180322075845612.png" alt="Drawing" style="width: 400px;"/>
+
+**`Elastic Loadbalancer`** :  Service which loadbalances traffic to multiple  instances across multiple `Availabilty Zones`.
+
+- Also `Elastic Loadbalancer` should also be paired with `Auto Scaling Group` for High Availabilty.
+
+- There could also be an Internal Elastic Loadbalancer for loadbalancing traffic internally within private subnets.
+- Elastic Loadbalancer can also stop sending traffic to a non responding instance based on `Health Checks`.
+- It can an also do the SSL Encryption and Decryption at its level , instead of these certificates installed at the instance level.
+
+**`Auto Scaling Group`** :  Automates the process of increasing or decreasing the amount of provised on-demand instances availaible for your application.
+
+ - Auto Scaling can increase or decrease the amount of instances based on `CloudWatch` metrics.
+
+Auto Scaling has two main components :
+
+- `Launch Configuration` : The template of the instance which will be launched.
+- `Auto Scaling Groups` : All the rules and setting which defines the trigger for when the instance will be created or deleted.
+      - Number of `MIN` and `MAX` instances allowed.
+      - VPCs and AZs to launch instances into.
+
+
+> For an architecture to be considered highly availaible and fault tolerant it MUST have an ELB service traffic to an Auto Scaling Group with a minimum of two instances in separate AZs.
+
+## Workflow
+
+It makes sense to create the Target Groups first and then the Load Balancers
+
+> In the example below we are creating the following scenario and based on the content (pictures or videos) in the URL and route based on the same.
+
+<img src="/assets/markdown-img-paste-20180322112423269.png" alt="Drawing" style="width: 400px;"/>
+
+
+<img src="/assets/markdown-img-paste-20180322112318970.png" alt="Drawing" style="width: 400px;"/>
+
+1. Create a Target Group
+
+    <img src="/assets/markdown-img-paste-20180322132805821.png" alt="Drawing" style="width: 400px;"/>
+2. Add Target (instances) to the target group
+<img src="/assets/markdown-img-paste-2018032213302429.png" alt="Drawing" style="width: 400px;"/>
+<img src="/assets/markdown-img-paste-20180322133049555.png" alt="Drawing" style="width: 400px;"/>
+3. Configure the Load balancer
+<img src="/assets/markdown-img-paste-2018032213324375.png" alt="Drawing" style="width: 400px;"/>
+4. Add the Target group created in step 1
+<img src="/assets/markdown-img-paste-20180322133338478.png" alt="Drawing" style="width: 400px;"/>
+5. Note that we have now the DNS name of the loadbalancer which can be accessed to access the service:
+<img src="/assets/markdown-img-paste-20180322133500210.png" alt="Drawing" style="width: 400px;"/>
+6. Additionaly when the Load balancer is created we can edit the rules for more advanced rules and routing:
+<img src="/assets/markdown-img-paste-20180322134148144.png" alt="Drawing" style="width: 400px;"/>
+Example is , that any time the path contains *pictures* we can forward it to the pictures target group , similary another group can be created for videos:
+<img src="/assets/markdown-img-paste-20180322134322594.png" alt="Drawing" style="width: 400px;"/>
+
+### Service Traffic to and from Private Web Servers
+
+**`Bastion Host`**: A terminal server for getting into instance in the private subnet.
+
+**`NAT Gateway`** : For providing internet access to the instances in the private subnet.
+`NAT Gateway` is without an actual instance doing the NATing and `NAT Instances` uses an actual instance.
+
+### ELB Troubleshooting
+
+- Loadbalancing is  not occuring in multiple `Availaibility Zones`
+Enable Cross-Zone Loadbalancing
+
+  <img src="/assets/markdown-img-paste-20180322161335110.png" alt="Drawing" style="width: 400px;"/>
+
+- If the Instance not coming up as health in the AWS, Check the ping protocol and make sure it is right.
+<img src="/assets/markdown-img-paste-20180322161603584.png" alt="Drawing" style="width: 400px;"/>
+
+- Also check the security group setting of the ELB to ensure if it has the right ports allowed for the communication
+<img src="/assets/markdown-img-paste-20180322162035550.png" alt="Drawing" style="width: 400px;"/>
+
+- Access Logs show IP Address of ELB and not the source traffic. For this to work configure the S3 Access Logs  in the picture below.
+<img src="/assets/markdown-img-paste-20180322162203901.png" alt="Drawing" style="width: 400px;"/>
+
+- Unable to add instances from a specific subnet . In this case you need to make sure that the AZ of the instance in question should be listed in the `Edit Availabilty Zone` and then it will appear in `Edit Instances` .
+<img src="/assets/markdown-img-paste-20180322162345922.png" alt="Drawing" style="width: 400px;"/>
+
+### Auto Scaling Troubleshooting
+
+- An Auto Scaled instance continues to Start and Stop or `Create`/`Terminate` instances in short intervals.
+This could happen if the `trigger` is too close for example CPU threshold `< 30 , > 40 `
+
+- Also keep a note of `Max` instaces as this may not let you spin more instances.
 
 -------
 # EC2 (Elastic Compute)
@@ -771,95 +859,7 @@ A physical network device you can attach to EC2 for HPC and Machine learning.
 
 -------
 
-# Advanced Networking
 
-
-If you notice in the picture below , we have now added a load balancer and an autoscaling group which now spans two vPCs .
-
-<img src="/assets/markdown-img-paste-20180322075845612.png" alt="Drawing" style="width: 400px;"/>
-
-**`Elastic Loadbalancer`** :  Service which loadbalances traffic to multiple  instances across multiple `Availabilty Zones`.
-
-- Also `Elastic Loadbalancer` should also be paired with `Auto Scaling Group` for High Availabilty.
-
-- There could also be an Internal Elastic Loadbalancer for loadbalancing traffic internally within private subnets.
-- Elastic Loadbalancer can also stop sending traffic to a non responding instance based on `Health Checks`.
-- It can an also do the SSL Encryption and Decryption at its level , instead of these certificates installed at the instance level.
-
-**`Auto Scaling Group`** :  Automates the process of increasing or decreasing the amount of provised on-demand instances availaible for your application.
-
- - Auto Scaling can increase or decrease the amount of instances based on `CloudWatch` metrics.
-
-Auto Scaling has two main components :
-
-- `Launch Configuration` : The template of the instance which will be launched.
-- `Auto Scaling Groups` : All the rules and setting which defines the trigger for when the instance will be created or deleted.
-      - Number of `MIN` and `MAX` instances allowed.
-      - VPCs and AZs to launch instances into.
-
-
-> For an architecture to be considered highly availaible and fault tolerant it MUST have an ELB service traffic to an Auto Scaling Group with a minimum of two instances in separate AZs.
-
-## Workflow
-
-It makes sense to create the Target Groups first and then the Load Balancers
-
-> In the example below we are creating the following scenario and based on the content (pictures or videos) in the URL and route based on the same.
-
-<img src="/assets/markdown-img-paste-20180322112423269.png" alt="Drawing" style="width: 400px;"/>
-
-
-<img src="/assets/markdown-img-paste-20180322112318970.png" alt="Drawing" style="width: 400px;"/>
-
-1. Create a Target Group
-
-    <img src="/assets/markdown-img-paste-20180322132805821.png" alt="Drawing" style="width: 400px;"/>
-2. Add Target (instances) to the target group
-<img src="/assets/markdown-img-paste-2018032213302429.png" alt="Drawing" style="width: 400px;"/>
-<img src="/assets/markdown-img-paste-20180322133049555.png" alt="Drawing" style="width: 400px;"/>
-3. Configure the Load balancer
-<img src="/assets/markdown-img-paste-2018032213324375.png" alt="Drawing" style="width: 400px;"/>
-4. Add the Target group created in step 1
-<img src="/assets/markdown-img-paste-20180322133338478.png" alt="Drawing" style="width: 400px;"/>
-5. Note that we have now the DNS name of the loadbalancer which can be accessed to access the service:
-<img src="/assets/markdown-img-paste-20180322133500210.png" alt="Drawing" style="width: 400px;"/>
-6. Additionaly when the Load balancer is created we can edit the rules for more advanced rules and routing:
-<img src="/assets/markdown-img-paste-20180322134148144.png" alt="Drawing" style="width: 400px;"/>
-Example is , that any time the path contains *pictures* we can forward it to the pictures target group , similary another group can be created for videos:
-<img src="/assets/markdown-img-paste-20180322134322594.png" alt="Drawing" style="width: 400px;"/>
-
-### Service Traffic to and from Private Web Servers
-
-**`Bastion Host`**: A terminal server for getting into instance in the private subnet.
-
-**`NAT Gateway`** : For providing internet access to the instances in the private subnet.
-`NAT Gateway` is without an actual instance doing the NATing and `NAT Instances` uses an actual instance.
-
-### ELB Troubleshooting
-
-- Loadbalancing is  not occuring in multiple `Availaibility Zones`
-Enable Cross-Zone Loadbalancing
-
-  <img src="/assets/markdown-img-paste-20180322161335110.png" alt="Drawing" style="width: 400px;"/>
-
-- If the Instance not coming up as health in the AWS, Check the ping protocol and make sure it is right.
-<img src="/assets/markdown-img-paste-20180322161603584.png" alt="Drawing" style="width: 400px;"/>
-
-- Also check the security group setting of the ELB to ensure if it has the right ports allowed for the communication
-<img src="/assets/markdown-img-paste-20180322162035550.png" alt="Drawing" style="width: 400px;"/>
-
-- Access Logs show IP Address of ELB and not the source traffic. For this to work configure the S3 Access Logs  in the picture below.
-<img src="/assets/markdown-img-paste-20180322162203901.png" alt="Drawing" style="width: 400px;"/>
-
-- Unable to add instances from a specific subnet . In this case you need to make sure that the AZ of the instance in question should be listed in the `Edit Availabilty Zone` and then it will appear in `Edit Instances` .
-<img src="/assets/markdown-img-paste-20180322162345922.png" alt="Drawing" style="width: 400px;"/>
-
-### Auto Scaling Troubleshooting
-
-- An Auto Scaled instance continues to Start and Stop or `Create`/`Terminate` instances in short intervals.
-This could happen if the `trigger` is too close for example CPU threshold `< 30 , > 40 `
-
-- Also keep a note of `Max` instaces as this may not let you spin more instances.
 
 -------
 
