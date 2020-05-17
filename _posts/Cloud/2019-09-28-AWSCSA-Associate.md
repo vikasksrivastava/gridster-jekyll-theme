@@ -1121,6 +1121,7 @@ Distribution : This is the name iven to the CDN whcih consists of a collection o
 > In order to server a new version of an object, either create a new object with a new name or create an `invalidation` on the CloudFront distribution based on onject names.
 > Invalidations have cost so if you have to invalidate large CloudFront distributions then perhaps you should create a new distribution and move DNS names.
 
+## CloudFront Lab
 ![](/assets/markdown-img-paste-20200507083011827.png)
 
 ![](/assets/markdown-img-paste-20200507083609690.png)
