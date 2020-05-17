@@ -1330,25 +1330,25 @@ Thursday : 3 -
 
 -------
 
-## Hybrid Environments
+### Hybrid Environments
 
 
 
 -------
 
-# Advanced Networking (START HERE IN LINUXACADEMY)
+### Advanced Networking (START HERE IN LINUXACADEMY)
 -------
 
-## Advanced VPC Networking
+### Advanced VPC Networking
 -------
 
-## Network Troubleshooting
+### Network Troubleshooting
 -------
 
-## Storage Services
+### Storage Services
 -------
 
-## Hybrid Environments
+### Hybrid Environments
 
 
 -------
