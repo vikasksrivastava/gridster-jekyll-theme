@@ -663,7 +663,7 @@ If the instance is rebooted the data is retained.
 
 > Instance store is good for a `swap` type usage
 
-**`EBS Elastic Block Store`**
+## **`EBS Elastic Block Store`**
 
  - EBS Volumes are persistent and can stay even after instance deletion, unlike Instance Store.
  - Can **only be attached to one instance** a time.
@@ -710,11 +710,11 @@ If the instance is rebooted the data is retained.
     Instances not created in a Placement group cannot be moved into a placement group.
     **A placement group cannot span AZs**.
 
-### EFS Elastic File System
+## EFS Elastic File System
 
 - **Consider this like NFS** , this can be shared between multiple  instances.
 
-
+## Instance Interface Types
 
 ### ENI vs ENA vs EFA
 
@@ -735,7 +735,7 @@ A physical network device you can attach to EC2 for HPC and Machine learning.
 
 -------
 
-## Server**less** Compute Services (AWS Lambda)
+# Server**less** Compute Services (AWS Lambda)
 
 - You do not need  servers (Serverless) to run your application , you can directly run your programs here !
 
@@ -771,9 +771,8 @@ A physical network device you can attach to EC2 for HPC and Machine learning.
 
 -------
 
-## Advanced Networking
+# Advanced Networking
 
-###
 
 If you notice in the picture below , we have now added a load balancer and an autoscaling group which now spans two vPCs .
 
@@ -864,7 +863,7 @@ This could happen if the `trigger` is too close for example CPU threshold `< 30 
 
 -------
 
-# Storage Services
+# Storage Service  S3
 
 
 
@@ -872,9 +871,9 @@ Different components of S3
 
 ![](/assets/markdown-img-paste-20180322190930356.png)
 
-## S3
 
-### S3 Permissions
+
+## S3 Permissions
 
 `Bucket Policies` These are the permissions which are direclty assigned to the S3 Bucket . These are called Bucket Policies.
 
@@ -883,7 +882,7 @@ Different components of S3
 ![](/assets/markdown-img-paste-20180322193909333.png)
 
 
-### S3 Storage Class
+## S3 Storage Class
 
 Object Durability : The percent the object is goign to be there. Not goign to be deleted or corrupted.
 Object Availaibilty : Availaible for Access.
@@ -901,7 +900,7 @@ Different types of S3 Storage :
 
 > To move object to Glacier you have to use `Life Cycle Policies`
 
-#### S3 Consitency Model
+## S3 Consitency Model
 
 The S3 consistency model is a direct byproduct of the redundancy and highly resilient design.
 
@@ -911,12 +910,12 @@ When you make a change to an object. The change is 1st written to one storage no
 
 However if you write a new object, it does not exist anywhere else yet (until it has replicated/propagated). If you do a read before the replication completes, there is no out-of-date object to read and you will get nothing back, however (magic happens here) and a retry will get the new object back . At no point is there a chance of getting out-of-date information back.
 
-#### S3 Versioning
+## S3 Versioning
 
 By default versioning is disabled on all objects.  Once enable it cannt be disabled completely , but stopped for future objects.
 Versioning can only be setup at the bucket level.
 
-#### S3 Encryption
+## S3 Encryption
 
 - Encryption In Transit achived by SSL/TLS
 - Encryption at Rest (Server Side) is achived by
@@ -930,31 +929,31 @@ Config Example (below)
 
 ![](/assets/markdown-img-paste-20200507074521915.png)
 
-#### S3 Lifecycle managment
+## S3 Lifecycle managment
 
 In the example below , we are moving the object to Infrequent Access to Glacier.
 
 ![](/assets/markdown-img-paste-20180322200344251.png)
 
-#### S3 Event Notification
+## S3 Event Notification
 
 Allows you to setup automated communication between S3 and other AWS services when a selected event occurs.
 Event can be sent to `SNS`, `Lambda`, `SQS Queue`
 ![](/assets/markdown-img-paste-20180322201116455.png)
 
-#### S3 Static Web Hosting
+## S3 Static Web Hosting
 
 Mainly lets say if your servers are unreachanble , they can atleast get a page notifying your company message rather than a 404.
 
 
-#### CORS / Cross Origin Resource Sharing
+## CORS / Cross Origin Resource Sharing
 
 Sharing accross wed domains
 ![](/assets/markdown-img-paste-2018032220164126.png)
 
 To be able to share information between two different buckets for two different domains CORS have to be enabled.
 
-#### Cross Region Replication
+## Cross Region Replication
 
 To enable S3 to replaicate across region. CRR requires versioning to be enabled.
 
@@ -964,7 +963,7 @@ To enable S3 to replaicate across region. CRR requires versioning to be enabled.
 
 **Note that delete markers / and deletion of versions are not replciated** A safety feature.
 
-#### S3 Cross-Region Replication Monitor
+## S3 Cross-Region Replication Monitor
 
 The Cross-Region Replication Monitor (CRR Monitor) solution **automatically checks the replication status of Amazon S3 objects across all AWS Regions** in a customer's account, and provides near real-time metrics and failure notifications to help customers identify failures and troubleshoot problems.
 
@@ -972,7 +971,7 @@ The solution automatically provisions the necessary AWS services to monitor and 
 
 More details https://aws.amazon.com/solutions/cross-region-replication-monitor/
 
-#### S3 Cross Account Access
+## S3 Cross Account Access
 
 Enables access for S3 from one account to another.
 
@@ -991,7 +990,7 @@ Enables access for S3 from one account to another.
 
 
 
-#### Amazon S3 Transfer Acceleration
+## Amazon S3 Transfer Acceleration
 
 Amazon S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration takes advantage of Amazon CloudFront’s globally distributed edge locations. As the data arrives at an edge location, data is routed to Amazon S3 over an optimized network path.
 
@@ -1006,11 +1005,30 @@ Notice the Transit service which are responsible for sending data in and out of 
 
 Uploading files in pieces , *highly suggested* when objects are bigger than `100MB`
 
+
+
+
+## S3 Path Deprecation
+
+https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
+
+**Old**
+
+https://**s3.amazonaws.com/jbarr-public**/images/ritchie_and_thompson_pdp11.jpeg
+
+
+**New**
+
+https://**jbarr-public.s3.amazonaws.com**/images/ritchie_and_thompson_pdp11.jpeg
+
+These URLs reference the same objects, but the objects are now in distinct DNS subdomains (jbarr-public.s3.amazonaws.com and jsb-public.s3.amazonaws.com, respectively). **The difference is subtle, but very important. When you use a URL to reference an object, DNS resolution is used to map the subdomain name to an IP address. With the path-style model, the subdomain is always s3.amazonaws.com or one of the regional endpoints; with the virtual-hosted style, the subdomain is specific to the bucket. This additional degree of endpoint specificity is the key that opens the door to many important improvements to S3.**
+
 #### AWS Import Export
 
 You send a physical device to AWS which AWS Uploads for you .
 
-#### Snowball
+
+## Snowball
 
 ![](/assets/markdown-img-paste-20200507084430725.png)
 
@@ -1032,29 +1050,12 @@ When to use a Snowball
 
 AWS Send you a transfer appliance which you can copy your data to to send .
 This is for PB Scale data.
-
-#### S3 Path Deprecation
-
-https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
-
-**Old**
-
-https://**s3.amazonaws.com/jbarr-public**/images/ritchie_and_thompson_pdp11.jpeg
-
-
-**New**
-
-https://**jbarr-public.s3.amazonaws.com**/images/ritchie_and_thompson_pdp11.jpeg
-
-These URLs reference the same objects, but the objects are now in distinct DNS subdomains (jbarr-public.s3.amazonaws.com and jsb-public.s3.amazonaws.com, respectively). **The difference is subtle, but very important. When you use a URL to reference an object, DNS resolution is used to map the subdomain name to an IP address. With the path-style model, the subdomain is always s3.amazonaws.com or one of the regional endpoints; with the virtual-hosted style, the subdomain is specific to the bucket. This additional degree of endpoint specificity is the key that opens the door to many important improvements to S3.**
-
-
-#### Snowball Demo
+## Snowball Demo
 
 ![Snowball Demo 1](assets/markdown-img-paste-20200516161430523.png)
 ![Snowball Demo 2](assets/markdown-img-paste-20200516161546401.png)
 
-#### Athena vs Macie
+## Athena vs Macie
 
 **Athena**
 Query data located in S3 in using Standard SQL
@@ -1072,7 +1073,7 @@ Used for PCI-DSS
 
 
 
-#### Storage Gateway
+## Storage Gateway
 
 Connects On-Premise Datacenter to S3 Storage
 
@@ -1080,7 +1081,7 @@ Connects On-Premise Datacenter to S3 Storage
 - `Gateway Stored Volumes` (Read as **locally** **stored** volumes) : All data is stored locally and snapshots of the same as incremental backup are stored in S3.
 
 
-#### DNS Management
+# DNS Management
 
 `Hosted Zones` : A Hosted Zone basically keep record of your DNS domain and know what to do with a DNS Request .
 
@@ -1101,7 +1102,7 @@ Common Record types include :
 - `CNAME` : Used to point to a hostname or other hostname.
 `MX` : Point to a mail record.
 
-#### CloudFront
+# CloudFront
 
 CloudFront is a global CDN which delivers content from an `origin` location to an `edge` locations .
 
@@ -1127,13 +1128,13 @@ Distribution : This is the name iven to the CDN whcih consists of a collection o
 Invalidations - Files types extensions which you dont want be cached.
 
 ![](/assets/markdown-img-paste-20200507084108883.png)
-#### VPN Connection
+# VPN Connection
 
 `Virtual Private Gateway` : It is the connector at the VPC Side , the `Customer Gateway` is the connector at the customer side.
 
 ![](/assets/markdown-img-paste-20180331234616674.png)
 
-#### AWS Direct Connnect
+# AWS Direct Connnect
 
 AWS Direct Connect is a service that provides a dedicated network connection between your network and one of the AWS Direct connect providers.
 
@@ -1146,7 +1147,7 @@ Dedicated Private connection is like a VPN connection to your DC , it does not p
 `Public Virtual Interfaces` : This allows you to have a direct connection to public AWS endpoints like Amazon S3 or DynamoDB
 
 
-#### VPC Peering
+# VPC Peering
 
 
 ![](/assets/markdown-img-paste-20180401001713511.png)
@@ -1167,7 +1168,7 @@ Notice the appearance of vpc-peer entry to point to in the route table
 
 `aws s3 mb s3://testbucket`
 
-#### AWS Database
+# AWS Database
 
 ![](/assets/markdown-img-paste-20180403080739308.png)
 
@@ -1190,7 +1191,7 @@ Benefits of RDS :
 - Automatic minor updates
 - Automatic backups.
 
-#### AWS RDS
+## AWS RDS
 
 ![](/assets/markdown-img-paste-20180401013344765.png)
 
@@ -1214,7 +1215,7 @@ Notice the `middle tab` with lot of information
 Creating `Read Replicas`
 ![](/assets/markdown-img-paste-20180402211953464.png)
 
-### DynamoDB
+## DynamoDB
 
 DynamoDB is a serverless SQL Service. A fully managed NoSQL Service , similar to MongoDB.
 All you need to do is define the throughput capacity. This scales automatically (grow and shrink)
@@ -1225,21 +1226,21 @@ Very straight forward configuration
 
 Used for storing : IoT , Gaming , Mobile
 
-### ElasticCache
+## ElasticCache
 
 It a fullymanaged `in-memory` cache engine. It caches large taxing queries on the DB which increases performance.
 
 memcached and redis are the currently availaible engines to power the ElasticCache.
 
-### RedShift
+## RedShift
 
 Amazon Redshift is a petabyte scale datawareshousing solution, fully managed and scalable and is generally used for Big Data analytics.
 
-## AWS Application Services
+# AWS Application Services
 
 ![](/assets/markdown-img-paste-20180403080953828.png)
 
-### SNS
+## SNS
 ![](/assets/markdown-img-paste-20180403081047797.png)
 SNS corodinates and manages the sending and delivery of messages to specific endpoints.
 Since it is integrated into many services natively it is very easy to set this up .
@@ -1265,7 +1266,7 @@ SNS is broken down into 3 main parts:
 <br><br>
 
 
-### SQS Essentials
+## SQS Essentials
 
 ![](/assets/markdown-img-paste-20180405062412916.png)
 
@@ -1286,7 +1287,7 @@ Amazon SQS offers two different types of queues :
 2. `FIFO Queue` : For the applications where order is important , or where duplicates can not be tolerated.
 
 
-### SWF , Simple Workflow Service
+## SWF , Simple Workflow Service
 
 SWF is a fully managed workflow service provided by AWS.  A workflow execution can last upto 1 year.
 
@@ -1299,7 +1300,7 @@ Components of SWF :
    - `Decision Task` : Tells the decider the sate of the workflow execution and allows him to take the decision on the next steps.
  - `Worker` : Responsible for taking a task and working on it .
 
-### AWS API Gateway
+# AWS API Gateway
 
 API Gateway is a fully managed service which allows you to create and manage your own APIs.
 
@@ -1314,7 +1315,7 @@ CloudFront Edge locations are the entrypoint , which help with DDoS protection a
 
 API Gateway also caches the responses as well .
 
-### CloudWatch Essentials
+# CloudWatch Essentials
 
 CloudWatch is used to monitor AWS Services, such as ,ELB and S3.
 You monitor your environment by configuring and viewing Cloudwatch metrics.
