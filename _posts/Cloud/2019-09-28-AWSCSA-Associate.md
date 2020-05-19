@@ -853,6 +853,46 @@ How to create a encrypted AMI Image from an un-encrypted volume atttached to an 
 
 - **Consider this like NFS** , this can be shared between multiple  instances.
 
+### EFS Demo
+
+**1. Create a EFS File System on AWS**
+
+
+![](EFSCreate1.png)
+![](EFSCreate2.png)
+
+**2. Mount the file on to the instance using the script**
+
+```sh
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+yum install amazon-efs-utils -y
+```
+Also make sure that the EFS is allowed in the instance security group . 
+
+![](SecurityGrpEFS.png)
+
+**3. Get the mount insttruction from your NFS and use that from your client**
+  
+![](NFSMountInstructions.png)
+
+## Amazon FSx (Windows FSx)
+
+**Designed for windows / Microsoft** application based on SMB based file services. (Server Message Block)
+
+Support AD Users, access control lists , groups and security policies.
+
+When you need centralised storage for Windows based applications such as sharepoint , SQL  Server , IIS or other microsoft native apps. 
+
+## Amazon FSx for Lusture 
+
+- For compute intesnive workloads such as HPC , media Data . machine Learning . 
+
+Sub millisecond access to your data and millions IOPs. 
+
 ## Instance Interface Types
 
 ### ENI vs ENA vs EFA
