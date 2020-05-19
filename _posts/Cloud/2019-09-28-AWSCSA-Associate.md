@@ -747,10 +747,34 @@ Has the following virtual hardware components, you have to choose the right inst
 
 ## Instance Metadata
 
-- `http://169.254.169.254/lates/user-data` Shows the **user data provided for bootstrapping**.
+- `curl http://169.254.169.254/latest/user-data` Shows the **user data provided for bootstrapping, like the one show below**.
 
-- `http://169.254.169.254/lates/user-data` Displays **AMI, Instance Type** etc.
+- `curl http://169.254.169.254/latest/local-data` Displays **AMI, Instance Type** etc.
 
+- `curl http://169.254.169.254/latest/metadata`
+
+
+
+
+# Instance BootStrap Script
+
+Like Cloud_Init
+
+![Bootstrap Script AWS ](assets/markdown-img-paste-20200519134945343.png)
+
+**Example**
+
+```sh
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><h1>Hello Welcome To My Webpage</h1></html>" > index.html
+aws s3 mb s3://YOURBUCKETNAMEHERE
+aws s3 cp index.html s3://YOURBUCKETNAMEHERE
+```
 ##  Instance Storage types
 
 
@@ -761,6 +785,14 @@ Has the following virtual hardware components, you have to choose the right inst
 If the instance is rebooted the data is retained.
 
 > Instance store is good for a `swap` type usage
+
+
+### Attaching IAM Role Using CLI and GUI
+
+https://aws.amazon.com/blogs/security/new-attach-an-aws-iam-role-to-an-existing-amazon-ec2-instance-by-using-the-aws-cli/
+
+https://aws.amazon.com/blogs/security/easily-replace-or-attach-an-iam-role-to-an-existing-ec2-instance-by-using-the-ec2-console/
+
 
 ## **`EBS Elastic Block Store`**
 
