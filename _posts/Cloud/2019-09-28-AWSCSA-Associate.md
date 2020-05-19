@@ -631,6 +631,7 @@ Example is , that any time the path contains *pictures* we can forward it to the
 ### Service Traffic to and from Private Web Servers
 
 **`Bastion Host`**: A terminal server for getting into instance in the private subnet.
+dfdfd
 
 **`NAT Gateway`** : For providing internet access to the instances in the private subnet.
 `NAT Gateway` is without an actual instance doing the NATing and `NAT Instances` uses an actual instance.
