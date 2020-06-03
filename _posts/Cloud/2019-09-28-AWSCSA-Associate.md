@@ -849,6 +849,24 @@ How to create a encrypted AMI Image from an un-encrypted volume atttached to an 
     Instances not created in a Placement group cannot be moved into a placement group.
     **A placement group cannot span AZs**.
 
+### Different types of Placemnt Groups 
+
+- **Clustered Placement Group** : Is a grouping of instances within a *single availaibility zone*.  Tis type of Placement groups are recommended for applications that need low network latency and high network trhoughput.
+
+Only certain instamces can be launcged into a clusterperd placment group . 
+
+
+- **Spread Placement Group** : Aposite of above , recommended for small number of critical instances that should be kept separate from each other. 
+
+- **Partitioned Placement Group** : Similar to Spread partition group , but you can have multiple instances as a part of group. (Compared to Spread which is of single instances)
+
+## WAF Web Application Firewall
+
+http://ip-address/username=vikas?department=it?code=asd34asdsa43 
+
+A Web application can look into the URL to look into the layer 7 details of traffic and take desired actions.
+
+
 ## EFS Elastic File System
 
 - **Consider this like NFS** , this can be shared between multiple  instances.
