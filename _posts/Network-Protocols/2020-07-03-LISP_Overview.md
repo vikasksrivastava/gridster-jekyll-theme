@@ -18,14 +18,14 @@ This is a post to get y ou started with the LISP protocol quick, This is a good 
 
 LISP is an Overlay Routing Architecture , which separates the endpoint identity from its location.
 
-LISP is very analogous to a DNS system.
+LISP is very analogous to a DNS system. 
 
 ![](LISPDNS.png)
 
 
 Locator ID Separation Protocols  which separated the endpoint ID from its location.
 
-## Lisp Components 
+## LISP Components 
 *LISP has 3 main components* :
 
 - **The Egress and Ingress Tunnel Routers also known as `ETR or ITR`** : Does the encapsulation and decapsulation of LISP packets. There are Egress and Ingress Tunnel Routesr (ETR and ITR). When both the functions can be merged into one is called **`XTR`**.
@@ -36,7 +36,7 @@ Locator ID Separation Protocols  which separated the endpoint ID from its locati
 
   - The **MAP Server (MS)** Advertises EID (Endpoint ID) inot the LISP mapping system for ETRs that register to it. 
 
-- **Proxy Engress/Ingress Tunnel Router or `PXTR`** : Acts as the border between LISP and Non LISP networks.
+- **Proxy Engress/Ingress Tunnel Router or `PXTR`** : Acts as the border between LISP and Non LISP networks. Not used in the example here though. 
 
 ![](LISPNet.png)
 
