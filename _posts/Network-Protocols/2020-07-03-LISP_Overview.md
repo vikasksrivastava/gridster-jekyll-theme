@@ -11,7 +11,8 @@ sidebar_toc:	true
 
 This is a post to get y ou started with the LISP protocol quick, This is a good primer for SD Access.
 
-<a href="#link" class="btn btn-info" role="button">Download Lab File for EVE</a>
+*If you would like to follow along this exercise on EVE-NG , download the file from here. This also has the base configs needed for bringign the routign up.*
+<a href="#link" class="btn btn-info" role="button">Download </a>
 
 
 # Introduction
@@ -45,6 +46,8 @@ Locator ID Separation Protocols  which separated the endpoint ID from its locati
 -  In this config below , all the basic connectivity between sites and the service provider is configured. 
 -  OSPF is being used as the routing protocol. 
 -  Next we will see the LISP related config only. 
+
+
 
 ### Step 1. Start the Config with MAP Server/ Resolver `MS-MR` 
 
