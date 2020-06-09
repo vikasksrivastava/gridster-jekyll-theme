@@ -3,7 +3,7 @@ layout: post
 title: LISP Overview
 description: Basic Introduction to LISP 
 comments: true
-featimg: Lisp-logo-450x253.jpg
+featimg: Lisp-logo.jpg
 tags: [DNA, Protocol]
 category: [SDAccess]
 sidebar_toc:	true
